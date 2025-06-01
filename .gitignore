@@ -1,0 +1,49 @@
+# Xcode
+.DS_Store
+build/
+DerivedData/
+xcuserdata/
+*.xcuserstate
+*.xcscmblueprint
+
+# SwiftPM
+.build/
+.swiftpm/xcode/package.xcworkspace
+
+# CocoaPods (если вдруг появится)
+Pods/
+Podfile.lock
+
+# Carthage (если будешь использовать)
+Carthage/
+Carthage.build/
+
+# Fastlane
+fastlane/report.xml
+fastlane/screenshots
+fastlane/test_output
+
+# Archives
+*.xcarchive
+
+# Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# Project files
+*.xcodeproj/project.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+*.xcodeproj/*.xcuserstate
+*.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+*.xcworkspace/xcuserdata/
+*.xcworkspace/*.xcuserstate
+
+# SwiftPM artifact caches
+.swiftpm/artifacts/
+
+# SwiftUI previews
+PreviewContent/
+
+# Env/local config
+*.env
+.env.*

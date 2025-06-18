@@ -9,15 +9,55 @@
 /* Begin PBXBuildFile section */
 		D273C8992DEB59E300142DBF /* WineColorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C8972DEB59E300142DBF /* WineColorApp.swift */; };
 		D273C89D2DEB5D8B00142DBF /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C89C2DEB5D8B00142DBF /* AppEnvironment.swift */; };
+		D273C89F2DEC8C8600142DBF /* WineType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C89E2DEC8C8600142DBF /* WineType.swift */; };
+		D273C8A32DEC907A00142DBF /* WinePalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C8A22DEC907A00142DBF /* WinePalette.swift */; };
+		D273C8A52DEC909D00142DBF /* WinePalettes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C8A42DEC909D00142DBF /* WinePalettes.swift */; };
+		D273C8A82DEC90FD00142DBF /* Color+InterpolatedColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C8A72DEC90FD00142DBF /* Color+InterpolatedColor.swift */; };
+		D273C8AB2DEC945100142DBF /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C8AA2DEC945100142DBF /* String.swift */; };
+		D273C8AD2DEC94D000142DBF /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C8AC2DEC94D000142DBF /* Collection.swift */; };
+		D273C8AF2E02AC5A00142DBF /* ActiveMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C8AE2E02AC5A00142DBF /* ActiveMode.swift */; };
+		D273C8B12E02ACD000142DBF /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C8B02E02ACD000142DBF /* MainViewModel.swift */; };
+		D273C8B42E0309BF00142DBF /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C8B32E0309BF00142DBF /* MainScreenView.swift */; };
+		D273C8B62E0309DC00142DBF /* ControlPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C8B52E0309DC00142DBF /* ControlPanelView.swift */; };
+		D273C8B82E0309F400142DBF /* ModeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C8B72E0309F400142DBF /* ModeButtonView.swift */; };
+		D273C8BA2E03247800142DBF /* AppLifecycleObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C8B92E03247800142DBF /* AppLifecycleObserver.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D273C8C32E03291100142DBF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D2B399812DEB595F00389746 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D2B399882DEB595F00389746;
+			remoteInfo = WineColor;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		D273C8972DEB59E300142DBF /* WineColorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineColorApp.swift; sourceTree = "<group>"; };
 		D273C89C2DEB5D8B00142DBF /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		D273C89E2DEC8C8600142DBF /* WineType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineType.swift; sourceTree = "<group>"; };
+		D273C8A22DEC907A00142DBF /* WinePalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinePalette.swift; sourceTree = "<group>"; };
+		D273C8A42DEC909D00142DBF /* WinePalettes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinePalettes.swift; sourceTree = "<group>"; };
+		D273C8A72DEC90FD00142DBF /* Color+InterpolatedColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+InterpolatedColor.swift"; sourceTree = "<group>"; };
+		D273C8AA2DEC945100142DBF /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		D273C8AC2DEC94D000142DBF /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
+		D273C8AE2E02AC5A00142DBF /* ActiveMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveMode.swift; sourceTree = "<group>"; };
+		D273C8B02E02ACD000142DBF /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		D273C8B32E0309BF00142DBF /* MainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
+		D273C8B52E0309DC00142DBF /* ControlPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlPanelView.swift; sourceTree = "<group>"; };
+		D273C8B72E0309F400142DBF /* ModeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeButtonView.swift; sourceTree = "<group>"; };
+		D273C8B92E03247800142DBF /* AppLifecycleObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLifecycleObserver.swift; sourceTree = "<group>"; };
+		D273C8BF2E03291100142DBF /* WineColorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WineColorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2B399892DEB595F00389746 /* WineColor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WineColor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		D273C8C02E03291100142DBF /* WineColorTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = WineColorTests;
+			sourceTree = "<group>";
+		};
 		D2B3998B2DEB595F00389746 /* WineColor */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = WineColor;
@@ -26,6 +66,13 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D273C8BC2E03291100142DBF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D2B399862DEB595F00389746 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -36,6 +83,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D273C8A62DEC90F000142DBF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D273C8A72DEC90FD00142DBF /* Color+InterpolatedColor.swift */,
+				D273C8AA2DEC945100142DBF /* String.swift */,
+				D273C8AC2DEC94D000142DBF /* Collection.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D273C8A92DEC93CA00142DBF /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D273C8B02E02ACD000142DBF /* MainViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D273C8B22E0309B200142DBF /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				D273C8B32E0309BF00142DBF /* MainScreenView.swift */,
+				D273C8B52E0309DC00142DBF /* ControlPanelView.swift */,
+				D273C8B72E0309F400142DBF /* ModeButtonView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
 		D2B399802DEB595F00389746 = {
 			isa = PBXGroup;
 			children = (
@@ -46,6 +121,7 @@
 				D2B3999C2DEB59C100389746 /* Services */,
 				D2B3999D2DEB59C900389746 /* Storage */,
 				D2B3998B2DEB595F00389746 /* WineColor */,
+				D273C8C02E03291100142DBF /* WineColorTests */,
 				D2B3998A2DEB595F00389746 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				D2B399892DEB595F00389746 /* WineColor.app */,
+				D273C8BF2E03291100142DBF /* WineColorTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -62,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				D273C8972DEB59E300142DBF /* WineColorApp.swift */,
+				D273C8B92E03247800142DBF /* AppLifecycleObserver.swift */,
 			);
 			path = AppCore;
 			sourceTree = "<group>";
@@ -69,7 +147,10 @@
 		D2B399992DEB599300389746 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				D273C8A62DEC90F000142DBF /* Extensions */,
 				D273C89C2DEB5D8B00142DBF /* AppEnvironment.swift */,
+				D273C8A22DEC907A00142DBF /* WinePalette.swift */,
+				D273C8A42DEC909D00142DBF /* WinePalettes.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -77,6 +158,8 @@
 		D2B3999A2DEB59A000389746 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				D273C89E2DEC8C8600142DBF /* WineType.swift */,
+				D273C8AE2E02AC5A00142DBF /* ActiveMode.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -84,6 +167,8 @@
 		D2B3999B2DEB59A800389746 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				D273C8B22E0309B200142DBF /* Screens */,
+				D273C8A92DEC93CA00142DBF /* ViewModels */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -105,6 +190,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		D273C8BE2E03291100142DBF /* WineColorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D273C8C52E03291100142DBF /* Build configuration list for PBXNativeTarget "WineColorTests" */;
+			buildPhases = (
+				D273C8BB2E03291100142DBF /* Sources */,
+				D273C8BC2E03291100142DBF /* Frameworks */,
+				D273C8BD2E03291100142DBF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D273C8C42E03291100142DBF /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				D273C8C02E03291100142DBF /* WineColorTests */,
+			);
+			name = WineColorTests;
+			packageProductDependencies = (
+			);
+			productName = WineColorTests;
+			productReference = D273C8BF2E03291100142DBF /* WineColorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		D2B399882DEB595F00389746 /* WineColor */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D2B399942DEB596100389746 /* Build configuration list for PBXNativeTarget "WineColor" */;
@@ -137,6 +245,10 @@
 				LastSwiftUpdateCheck = 1640;
 				LastUpgradeCheck = 1640;
 				TargetAttributes = {
+					D273C8BE2E03291100142DBF = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = D2B399882DEB595F00389746;
+					};
 					D2B399882DEB595F00389746 = {
 						CreatedOnToolsVersion = 16.4;
 					};
@@ -157,11 +269,19 @@
 			projectRoot = "";
 			targets = (
 				D2B399882DEB595F00389746 /* WineColor */,
+				D273C8BE2E03291100142DBF /* WineColorTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D273C8BD2E03291100142DBF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D2B399872DEB595F00389746 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -172,18 +292,81 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D273C8BB2E03291100142DBF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D2B399852DEB595F00389746 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D273C8AD2DEC94D000142DBF /* Collection.swift in Sources */,
+				D273C8A32DEC907A00142DBF /* WinePalette.swift in Sources */,
+				D273C8B82E0309F400142DBF /* ModeButtonView.swift in Sources */,
+				D273C8A82DEC90FD00142DBF /* Color+InterpolatedColor.swift in Sources */,
+				D273C8AF2E02AC5A00142DBF /* ActiveMode.swift in Sources */,
+				D273C8A52DEC909D00142DBF /* WinePalettes.swift in Sources */,
+				D273C89F2DEC8C8600142DBF /* WineType.swift in Sources */,
+				D273C8B62E0309DC00142DBF /* ControlPanelView.swift in Sources */,
+				D273C8B42E0309BF00142DBF /* MainScreenView.swift in Sources */,
+				D273C8BA2E03247800142DBF /* AppLifecycleObserver.swift in Sources */,
 				D273C8992DEB59E300142DBF /* WineColorApp.swift in Sources */,
+				D273C8AB2DEC945100142DBF /* String.swift in Sources */,
 				D273C89D2DEB5D8B00142DBF /* AppEnvironment.swift in Sources */,
+				D273C8B12E02ACD000142DBF /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		D273C8C42E03291100142DBF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D2B399882DEB595F00389746 /* WineColor */;
+			targetProxy = D273C8C32E03291100142DBF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		D273C8C62E03291100142DBF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3BEPD83256;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.homber.WineColorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WineColor.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WineColor";
+			};
+			name = Debug;
+		};
+		D273C8C72E03291100142DBF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3BEPD83256;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.homber.WineColorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WineColor.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WineColor";
+			};
+			name = Release;
+		};
 		D2B399922DEB596100389746 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -369,6 +552,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D273C8C52E03291100142DBF /* Build configuration list for PBXNativeTarget "WineColorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D273C8C62E03291100142DBF /* Debug */,
+				D273C8C72E03291100142DBF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D2B399842DEB595F00389746 /* Build configuration list for PBXProject "WineColor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

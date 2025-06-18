@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct WineColorApp: App {
+    @StateObject private var viewModel = MainViewModel()
+
     var body: some Scene {
         WindowGroup {
-            
+            MainScreenView(viewModel: viewModel)
         }
     }
 }

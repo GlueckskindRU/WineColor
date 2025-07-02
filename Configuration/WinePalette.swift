@@ -13,24 +13,26 @@ struct WinePalette {
 
     /// Возвращает цвет из палитры, соответствующий положению слайдера (от 0.0 до 1.0)
     func color(at position: CGFloat) -> Color {
-        guard colors.isNotEmpty else { return .clear }
+        let sortedColors = GradientBuilder.sortColorsWithBrightness(from: colors).map { $0.color }
+        guard sortedColors.isNotEmpty else { return .clear }
         let clamped = min(max(position, 0), 1)
 
-        let segmentedSize = 1.0 / CGFloat(colors.count - 1)
+        let segmentedSize = 1.0 / CGFloat(sortedColors.count - 1)
         let index = Int(clamped / segmentedSize)
 
-        if index >= colors.count - 1 {
-            return colors[colors.count - 1]
+        if index >= sortedColors.count - 1 {
+            return sortedColors[sortedColors.count - 1]
         }
 
-        let fromColor = colors[index]
-        let toColor = colors[index + 1]
+        let fromColor = sortedColors[index]
+        let toColor = sortedColors[index + 1]
 
         let localProgress = (clamped - segmentedSize * CGFloat(index)) / segmentedSize
         return Color.interpolatedColor(from: fromColor, to: toColor, progress: localProgress)
     }
 
     var gradient: LinearGradient {
-        LinearGradient(colors: colors, startPoint: .top, endPoint: .bottom)
+        let perceptualGradient = GradientBuilder.makePerceptualGradient(from: colors)
+        return LinearGradient(gradient: perceptualGradient, startPoint: .leading, endPoint: .trailing)
     }
 }

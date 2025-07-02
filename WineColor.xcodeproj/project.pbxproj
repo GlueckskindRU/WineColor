@@ -12,7 +12,7 @@
 		D273C89F2DEC8C8600142DBF /* WineType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C89E2DEC8C8600142DBF /* WineType.swift */; };
 		D273C8A32DEC907A00142DBF /* WinePalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C8A22DEC907A00142DBF /* WinePalette.swift */; };
 		D273C8A52DEC909D00142DBF /* WinePalettes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C8A42DEC909D00142DBF /* WinePalettes.swift */; };
-		D273C8A82DEC90FD00142DBF /* Color+InterpolatedColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C8A72DEC90FD00142DBF /* Color+InterpolatedColor.swift */; };
+		D273C8A82DEC90FD00142DBF /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C8A72DEC90FD00142DBF /* Color.swift */; };
 		D273C8AB2DEC945100142DBF /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C8AA2DEC945100142DBF /* String.swift */; };
 		D273C8AD2DEC94D000142DBF /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C8AC2DEC94D000142DBF /* Collection.swift */; };
 		D273C8AF2E02AC5A00142DBF /* ActiveMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C8AE2E02AC5A00142DBF /* ActiveMode.swift */; };
@@ -21,6 +21,9 @@
 		D273C8B62E0309DC00142DBF /* ControlPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C8B52E0309DC00142DBF /* ControlPanelView.swift */; };
 		D273C8B82E0309F400142DBF /* ModeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C8B72E0309F400142DBF /* ModeButtonView.swift */; };
 		D273C8BA2E03247800142DBF /* AppLifecycleObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C8B92E03247800142DBF /* AppLifecycleObserver.swift */; };
+		D273C8CF2E042FAC00142DBF /* GradientBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C8CE2E042FAC00142DBF /* GradientBuilder.swift */; };
+		D273C8D22E157C2900142DBF /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C8D12E157C2900142DBF /* Analytics.swift */; };
+		D273C8D42E157C4700142DBF /* AnalyticsEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C8D32E157C4700142DBF /* AnalyticsEvent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +42,7 @@
 		D273C89E2DEC8C8600142DBF /* WineType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineType.swift; sourceTree = "<group>"; };
 		D273C8A22DEC907A00142DBF /* WinePalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinePalette.swift; sourceTree = "<group>"; };
 		D273C8A42DEC909D00142DBF /* WinePalettes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinePalettes.swift; sourceTree = "<group>"; };
-		D273C8A72DEC90FD00142DBF /* Color+InterpolatedColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+InterpolatedColor.swift"; sourceTree = "<group>"; };
+		D273C8A72DEC90FD00142DBF /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		D273C8AA2DEC945100142DBF /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		D273C8AC2DEC94D000142DBF /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		D273C8AE2E02AC5A00142DBF /* ActiveMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveMode.swift; sourceTree = "<group>"; };
@@ -49,6 +52,9 @@
 		D273C8B72E0309F400142DBF /* ModeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeButtonView.swift; sourceTree = "<group>"; };
 		D273C8B92E03247800142DBF /* AppLifecycleObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLifecycleObserver.swift; sourceTree = "<group>"; };
 		D273C8BF2E03291100142DBF /* WineColorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WineColorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D273C8CE2E042FAC00142DBF /* GradientBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBuilder.swift; sourceTree = "<group>"; };
+		D273C8D12E157C2900142DBF /* Analytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
+		D273C8D32E157C4700142DBF /* AnalyticsEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsEvent.swift; sourceTree = "<group>"; };
 		D2B399892DEB595F00389746 /* WineColor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WineColor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -86,7 +92,7 @@
 		D273C8A62DEC90F000142DBF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				D273C8A72DEC90FD00142DBF /* Color+InterpolatedColor.swift */,
+				D273C8A72DEC90FD00142DBF /* Color.swift */,
 				D273C8AA2DEC945100142DBF /* String.swift */,
 				D273C8AC2DEC94D000142DBF /* Collection.swift */,
 			);
@@ -109,6 +115,15 @@
 				D273C8B72E0309F400142DBF /* ModeButtonView.swift */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		D273C8D02E157C1300142DBF /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				D273C8D12E157C2900142DBF /* Analytics.swift */,
+				D273C8D32E157C4700142DBF /* AnalyticsEvent.swift */,
+			);
+			path = Analytics;
 			sourceTree = "<group>";
 		};
 		D2B399802DEB595F00389746 = {
@@ -138,6 +153,7 @@
 		D2B399982DEB598700389746 /* AppCore */ = {
 			isa = PBXGroup;
 			children = (
+				D273C8D02E157C1300142DBF /* Analytics */,
 				D273C8972DEB59E300142DBF /* WineColorApp.swift */,
 				D273C8B92E03247800142DBF /* AppLifecycleObserver.swift */,
 			);
@@ -176,6 +192,7 @@
 		D2B3999C2DEB59C100389746 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				D273C8CE2E042FAC00142DBF /* GradientBuilder.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -305,10 +322,13 @@
 			files = (
 				D273C8AD2DEC94D000142DBF /* Collection.swift in Sources */,
 				D273C8A32DEC907A00142DBF /* WinePalette.swift in Sources */,
+				D273C8D22E157C2900142DBF /* Analytics.swift in Sources */,
 				D273C8B82E0309F400142DBF /* ModeButtonView.swift in Sources */,
-				D273C8A82DEC90FD00142DBF /* Color+InterpolatedColor.swift in Sources */,
+				D273C8A82DEC90FD00142DBF /* Color.swift in Sources */,
+				D273C8D42E157C4700142DBF /* AnalyticsEvent.swift in Sources */,
 				D273C8AF2E02AC5A00142DBF /* ActiveMode.swift in Sources */,
 				D273C8A52DEC909D00142DBF /* WinePalettes.swift in Sources */,
+				D273C8CF2E042FAC00142DBF /* GradientBuilder.swift in Sources */,
 				D273C89F2DEC8C8600142DBF /* WineType.swift in Sources */,
 				D273C8B62E0309DC00142DBF /* ControlPanelView.swift in Sources */,
 				D273C8B42E0309BF00142DBF /* MainScreenView.swift in Sources */,

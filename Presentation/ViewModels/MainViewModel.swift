@@ -11,7 +11,11 @@ import SwiftUI
 final class MainViewModel: ObservableObject {
     // MARK: - Input State
 
-    @Published var mode: ActiveMode = .none
+    @Published var mode: ActiveMode = .none {
+        didSet {
+            logModeChange()
+        }
+    }
 
     @Published var brightness: CGFloat // используется только в ActiveMode.none
     @Published var textScale: CGFloat = 0.5 // 0...1
@@ -129,5 +133,22 @@ final class MainViewModel: ObservableObject {
                 self.palettePosition = newValue
             }
         }
+    }
+    
+    // MARK: - Analytics
+    
+    private func logModeChange() {
+        let event: AnalyticsEvent
+
+        switch mode {
+        case .none:
+            event = AnalyticsEvent(name: "mode_brightness")
+        case .text:
+            event = AnalyticsEvent(name: "mode_text")
+        case .wine(let type):
+            event = AnalyticsEvent(name: "mode_wine", parameters: ["type": type.rawValue])
+        }
+
+        Analytics.log(event)
     }
 }

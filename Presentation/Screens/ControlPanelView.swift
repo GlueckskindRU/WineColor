@@ -17,7 +17,7 @@ struct ControlPanelView: View {
                 ForEach(WineType.allCases) { type in
                     ModeButtonView(
                         isSelected: viewModel.selectedWineType == type,
-                        color: WinePalettes.palette(for: type).color(at: 0.5),
+                        color: type.buttonColor,
                         label: .empty
                     ) {
                         viewModel.mode = viewModel.selectedWineType == type ? .none : .wine(type)
@@ -45,7 +45,7 @@ struct ControlPanelView: View {
             }
         }
         .padding()
-        .background(Color.white.opacity(0.1))
+        .background(Color.white.opacity(0.5))
         .clipShape(RoundedRectangle(cornerRadius: 16))
     }
 }

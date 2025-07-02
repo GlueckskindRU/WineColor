@@ -10,6 +10,10 @@ import SwiftUI
 @main
 struct WineColorApp: App {
     @StateObject private var viewModel = MainViewModel()
+    
+    init() {
+        Analytics.log(AnalyticsEvent(name: "app_opened"))
+    }
 
     var body: some Scene {
         WindowGroup {

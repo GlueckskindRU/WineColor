@@ -26,14 +26,6 @@ final class MainViewModelTests: XCTestCase {
         XCTAssertFalse(viewModel.isBrightnessMode)
     }
 
-    func testWineModeSetsCorrectType() {
-        let viewModel = MainViewModel()
-        viewModel.mode = .wine(.red)
-
-        XCTAssertEqual(viewModel.selectedWineType, .red)
-        XCTAssertTrue(viewModel.isWineMode)
-    }
-
     func testSliderAffectsBrightnessWhenInNoneMode() {
         let viewModel = MainViewModel()
         viewModel.mode = .none

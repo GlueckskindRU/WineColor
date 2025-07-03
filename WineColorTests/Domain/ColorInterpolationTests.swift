@@ -26,4 +26,3 @@ final class ColorInterpolationTests: XCTestCase {
         XCTAssertEqual(a, 1.0, accuracy: 0.01)
     }
 }
-

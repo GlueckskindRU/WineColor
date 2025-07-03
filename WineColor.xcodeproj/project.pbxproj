@@ -286,6 +286,7 @@
 				D2B399852DEB595F00389746 /* Sources */,
 				D2B399862DEB595F00389746 /* Frameworks */,
 				D2B399872DEB595F00389746 /* Resources */,
+				D29E06852E16E2010037AB78 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -356,6 +357,30 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D29E06852E16E2010037AB78 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/WineColor",
+				"$(SRCROOT)/WineColorTests",
+				"$(SRCROOT)/.swiftlint.yml",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint > /dev/null; then\n  swiftlint lint --strict --quiet --force-exclude WineColor || true\n  swiftlint lint --strict --quiet --force-exclude WineColorTests || true\nelse\n  echo \"warning: SwiftLint not installed\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D273C8BB2E03291100142DBF /* Sources */ = {

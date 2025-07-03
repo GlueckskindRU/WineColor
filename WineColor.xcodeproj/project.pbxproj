@@ -95,44 +95,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D273C8A62DEC90F000142DBF /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				D273C8A72DEC90FD00142DBF /* Color.swift */,
-				D273C8AA2DEC945100142DBF /* String.swift */,
-				D273C8AC2DEC94D000142DBF /* Collection.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		D273C8A92DEC93CA00142DBF /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				D273C8B02E02ACD000142DBF /* MainViewModel.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		D273C8B22E0309B200142DBF /* Screens */ = {
-			isa = PBXGroup;
-			children = (
-				D273C8B32E0309BF00142DBF /* MainScreenView.swift */,
-				D273C8B52E0309DC00142DBF /* ControlPanelView.swift */,
-				D273C8B72E0309F400142DBF /* ModeButtonView.swift */,
-				D273C8DA2E169E1D00142DBF /* LargeThumbSlider.swift */,
-			);
-			path = Screens;
-			sourceTree = "<group>";
-		};
-		D273C8D02E157C1300142DBF /* Analytics */ = {
-			isa = PBXGroup;
-			children = (
-				D273C8D12E157C2900142DBF /* Analytics.swift */,
-				D273C8D32E157C4700142DBF /* AnalyticsEvent.swift */,
-			);
-			path = Analytics;
-			sourceTree = "<group>";
-		};
 		D273C8D52E16706400142DBF /* Auxiliaries */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,15 +104,108 @@
 			path = Auxiliaries;
 			sourceTree = "<group>";
 		};
+		D273C8DC2E16BABF00142DBF /* App */ = {
+			isa = PBXGroup;
+			children = (
+				D273C8972DEB59E300142DBF /* WineColorApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		D273C8DD2E16BAEE00142DBF /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				D273C8B92E03247800142DBF /* AppLifecycleObserver.swift */,
+				D273C8DF2E16C56600142DBF /* Extensions */,
+				D273C8DE2E16C55C00142DBF /* Analytics */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		D273C8DE2E16C55C00142DBF /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				D273C8D32E157C4700142DBF /* AnalyticsEvent.swift */,
+				D273C8D12E157C2900142DBF /* Analytics.swift */,
+			);
+			path = Analytics;
+			sourceTree = "<group>";
+		};
+		D273C8DF2E16C56600142DBF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D273C8A72DEC90FD00142DBF /* Color.swift */,
+				D273C8AA2DEC945100142DBF /* String.swift */,
+				D273C8AC2DEC94D000142DBF /* Collection.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D273C8E02E16C57000142DBF /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				D273C8D52E16706400142DBF /* Auxiliaries */,
+				D273C8E12E16C57800142DBF /* Main */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		D273C8E12E16C57800142DBF /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				D273C8E32E16C58700142DBF /* ViewModel */,
+				D273C8E22E16C57F00142DBF /* Views */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		D273C8E22E16C57F00142DBF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D273C8B32E0309BF00142DBF /* MainScreenView.swift */,
+				D273C8B52E0309DC00142DBF /* ControlPanelView.swift */,
+				D273C8B72E0309F400142DBF /* ModeButtonView.swift */,
+				D273C8DA2E169E1D00142DBF /* LargeThumbSlider.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D273C8E32E16C58700142DBF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D273C8B02E02ACD000142DBF /* MainViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D273C8E42E16C59000142DBF /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				D273C8E52E16C59700142DBF /* Models */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		D273C8E52E16C59700142DBF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D273C89E2DEC8C8600142DBF /* WineType.swift */,
+				D273C8AE2E02AC5A00142DBF /* ActiveMode.swift */,
+				D273C8A22DEC907A00142DBF /* WinePalette.swift */,
+				D273C8A42DEC909D00142DBF /* WinePalettes.swift */,
+				D273C8CE2E042FAC00142DBF /* GradientBuilder.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		D2B399802DEB595F00389746 = {
 			isa = PBXGroup;
 			children = (
-				D2B399982DEB598700389746 /* AppCore */,
+				D273C8E42E16C59000142DBF /* Shared */,
+				D273C8E02E16C57000142DBF /* Features */,
+				D273C8DD2E16BAEE00142DBF /* Core */,
+				D273C8DC2E16BABF00142DBF /* App */,
 				D2B399992DEB599300389746 /* Configuration */,
-				D2B3999A2DEB59A000389746 /* Domain */,
-				D2B3999B2DEB59A800389746 /* Presentation */,
-				D2B3999C2DEB59C100389746 /* Services */,
-				D2B3999D2DEB59C900389746 /* Storage */,
 				D2B3998B2DEB595F00389746 /* WineColor */,
 				D273C8C02E03291100142DBF /* WineColorTests */,
 				D2B3998A2DEB595F00389746 /* Products */,
@@ -166,59 +221,12 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D2B399982DEB598700389746 /* AppCore */ = {
-			isa = PBXGroup;
-			children = (
-				D273C8D02E157C1300142DBF /* Analytics */,
-				D273C8972DEB59E300142DBF /* WineColorApp.swift */,
-				D273C8B92E03247800142DBF /* AppLifecycleObserver.swift */,
-			);
-			path = AppCore;
-			sourceTree = "<group>";
-		};
 		D2B399992DEB599300389746 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				D273C8A62DEC90F000142DBF /* Extensions */,
 				D273C89C2DEB5D8B00142DBF /* AppEnvironment.swift */,
-				D273C8A22DEC907A00142DBF /* WinePalette.swift */,
-				D273C8A42DEC909D00142DBF /* WinePalettes.swift */,
 			);
 			path = Configuration;
-			sourceTree = "<group>";
-		};
-		D2B3999A2DEB59A000389746 /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				D273C89E2DEC8C8600142DBF /* WineType.swift */,
-				D273C8AE2E02AC5A00142DBF /* ActiveMode.swift */,
-			);
-			path = Domain;
-			sourceTree = "<group>";
-		};
-		D2B3999B2DEB59A800389746 /* Presentation */ = {
-			isa = PBXGroup;
-			children = (
-				D273C8D52E16706400142DBF /* Auxiliaries */,
-				D273C8B22E0309B200142DBF /* Screens */,
-				D273C8A92DEC93CA00142DBF /* ViewModels */,
-			);
-			path = Presentation;
-			sourceTree = "<group>";
-		};
-		D2B3999C2DEB59C100389746 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				D273C8CE2E042FAC00142DBF /* GradientBuilder.swift */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		D2B3999D2DEB59C900389746 /* Storage */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Storage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

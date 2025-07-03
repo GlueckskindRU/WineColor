@@ -116,7 +116,6 @@
 			isa = PBXGroup;
 			children = (
 				D273C8B92E03247800142DBF /* AppLifecycleObserver.swift */,
-				D273C8DE2E16C55C00142DBF /* Analytics */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -213,15 +212,24 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		D29E06842E16CD030037AB78 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				D273C8DC2E16BABF00142DBF /* App */,
+				D2B399992DEB599300389746 /* Configuration */,
+				D273C8DE2E16C55C00142DBF /* Analytics */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
 		D2B399802DEB595F00389746 = {
 			isa = PBXGroup;
 			children = (
+				D29E06842E16CD030037AB78 /* Infrastructure */,
 				D273C8E42E16C59000142DBF /* Domain */,
 				D273C8E02E16C57000142DBF /* Features */,
 				D273C8DF2E16C56600142DBF /* Extensions */,
 				D273C8DD2E16BAEE00142DBF /* Core */,
-				D273C8DC2E16BABF00142DBF /* App */,
-				D2B399992DEB599300389746 /* Configuration */,
 				D2B3998B2DEB595F00389746 /* WineColor */,
 				D273C8C02E03291100142DBF /* WineColorTests */,
 				D2B3998A2DEB595F00389746 /* Products */,

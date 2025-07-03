@@ -52,6 +52,7 @@ final class MainViewModel: ObservableObject {
     var isBrightnessMode: Bool { mode.isBrightness }
     var isTextMode: Bool { mode.isText }
     var isWineMode: Bool { mode.isWine }
+    var isEyedropperMode: Bool { mode == .eyedropper }
 
     // MARK: - Text
 
@@ -80,28 +81,28 @@ final class MainViewModel: ObservableObject {
         mode == .text
     }
 
-    // MARK: - Wine
-
-    var selectedWineType: WineType? {
-        mode.selectedWineType
-    }
-
-    var winePalette: WinePalette? {
-        guard let type = selectedWineType else { return nil }
-        return WinePalettes.palette(for: type)
-    }
-
-    var backgroundColor: Color {
-        switch mode {
-        case .none, .text:
-            return .white
-        case let .wine(type):
-            return WinePalettes.palette(for: type).color(at: palettePosition)
+    var backgroundColor: Color = .white
+    
+    func isSelected(_ button: ControlButton) -> Bool {
+        switch (button, mode) {
+        case (.brightness, .none),
+             (.text, .text),
+             (.eyedropper, .eyedropper):
+            return true
+        default:
+            return false
         }
     }
-
-    var gradient: LinearGradient? {
-        winePalette?.gradient
+    
+    func select(_ button: ControlButton) {
+        switch button {
+            case .brightness:
+                mode = .none
+            case .text:
+                mode = .text
+            case .eyedropper:
+                mode = .eyedropper
+        }
     }
 
     // MARK: - Brightness
@@ -116,21 +117,25 @@ final class MainViewModel: ObservableObject {
     var sliderValue: Binding<CGFloat> {
         Binding {
             switch self.mode {
-            case .none:
-                return self.brightness
-            case .text:
-                return self.textScale
-            case .wine:
-                return self.palettePosition
+                case .none:
+                    return self.brightness
+                case .text:
+                    return self.textScale
+                case .wine:
+                    return self.palettePosition
+                case .eyedropper:
+                    return .zero
             }
         } set: { newValue in
             switch self.mode {
-            case .none:
-                self.updateBrightness(to: newValue)
-            case .text:
-                self.textScale = newValue
-            case .wine:
-                self.palettePosition = newValue
+                case .none:
+                    self.updateBrightness(to: newValue)
+                case .text:
+                    self.textScale = newValue
+                case .wine:
+                    self.palettePosition = newValue
+                case .eyedropper:
+                    break
             }
         }
     }
@@ -141,12 +146,14 @@ final class MainViewModel: ObservableObject {
         let event: AnalyticsEvent
 
         switch mode {
-        case .none:
-            event = AnalyticsEvent(name: "mode_brightness")
-        case .text:
-            event = AnalyticsEvent(name: "mode_text")
-        case .wine(let type):
-            event = AnalyticsEvent(name: "mode_wine", parameters: ["type": type.rawValue])
+            case .none:
+                event = AnalyticsEvent(name: "mode_brightness")
+            case .text:
+                event = AnalyticsEvent(name: "mode_text")
+            case .wine(let type):
+                event = AnalyticsEvent(name: "mode_wine", parameters: ["type": type.rawValue])
+            case .eyedropper:
+                event = AnalyticsEvent(name: "mode_eyedropper")
         }
 
         Analytics.log(event)

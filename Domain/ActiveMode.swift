@@ -11,6 +11,7 @@ enum ActiveMode: Equatable {
     case none
     case text
     case wine(WineType)
+    case eyedropper
 
     var isBrightness: Bool {
         self == .none
@@ -32,5 +33,13 @@ enum ActiveMode: Equatable {
             return type
         }
         return nil
+    }
+    
+    var isEyedropperMode: Bool {
+        self == .eyedropper
+    }
+    
+    var isSliderEnabled: Bool {
+        self != .eyedropper
     }
 }

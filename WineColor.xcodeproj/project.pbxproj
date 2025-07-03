@@ -24,6 +24,9 @@
 		D273C8CF2E042FAC00142DBF /* GradientBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C8CE2E042FAC00142DBF /* GradientBuilder.swift */; };
 		D273C8D22E157C2900142DBF /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C8D12E157C2900142DBF /* Analytics.swift */; };
 		D273C8D42E157C4700142DBF /* AnalyticsEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C8D32E157C4700142DBF /* AnalyticsEvent.swift */; };
+		D273C8D72E16709D00142DBF /* ControlButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C8D62E16709D00142DBF /* ControlButton.swift */; };
+		D273C8D92E1672C000142DBF /* ActiveMode+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C8D82E1672C000142DBF /* ActiveMode+Extension.swift */; };
+		D273C8DB2E169E1D00142DBF /* LargeThumbSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C8DA2E169E1D00142DBF /* LargeThumbSlider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,9 @@
 		D273C8CE2E042FAC00142DBF /* GradientBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBuilder.swift; sourceTree = "<group>"; };
 		D273C8D12E157C2900142DBF /* Analytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
 		D273C8D32E157C4700142DBF /* AnalyticsEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsEvent.swift; sourceTree = "<group>"; };
+		D273C8D62E16709D00142DBF /* ControlButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlButton.swift; sourceTree = "<group>"; };
+		D273C8D82E1672C000142DBF /* ActiveMode+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActiveMode+Extension.swift"; sourceTree = "<group>"; };
+		D273C8DA2E169E1D00142DBF /* LargeThumbSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeThumbSlider.swift; sourceTree = "<group>"; };
 		D2B399892DEB595F00389746 /* WineColor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WineColor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -113,6 +119,7 @@
 				D273C8B32E0309BF00142DBF /* MainScreenView.swift */,
 				D273C8B52E0309DC00142DBF /* ControlPanelView.swift */,
 				D273C8B72E0309F400142DBF /* ModeButtonView.swift */,
+				D273C8DA2E169E1D00142DBF /* LargeThumbSlider.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -124,6 +131,15 @@
 				D273C8D32E157C4700142DBF /* AnalyticsEvent.swift */,
 			);
 			path = Analytics;
+			sourceTree = "<group>";
+		};
+		D273C8D52E16706400142DBF /* Auxiliaries */ = {
+			isa = PBXGroup;
+			children = (
+				D273C8D62E16709D00142DBF /* ControlButton.swift */,
+				D273C8D82E1672C000142DBF /* ActiveMode+Extension.swift */,
+			);
+			path = Auxiliaries;
 			sourceTree = "<group>";
 		};
 		D2B399802DEB595F00389746 = {
@@ -183,6 +199,7 @@
 		D2B3999B2DEB59A800389746 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				D273C8D52E16706400142DBF /* Auxiliaries */,
 				D273C8B22E0309B200142DBF /* Screens */,
 				D273C8A92DEC93CA00142DBF /* ViewModels */,
 			);
@@ -325,10 +342,13 @@
 				D273C8D22E157C2900142DBF /* Analytics.swift in Sources */,
 				D273C8B82E0309F400142DBF /* ModeButtonView.swift in Sources */,
 				D273C8A82DEC90FD00142DBF /* Color.swift in Sources */,
+				D273C8DB2E169E1D00142DBF /* LargeThumbSlider.swift in Sources */,
 				D273C8D42E157C4700142DBF /* AnalyticsEvent.swift in Sources */,
 				D273C8AF2E02AC5A00142DBF /* ActiveMode.swift in Sources */,
 				D273C8A52DEC909D00142DBF /* WinePalettes.swift in Sources */,
+				D273C8D92E1672C000142DBF /* ActiveMode+Extension.swift in Sources */,
 				D273C8CF2E042FAC00142DBF /* GradientBuilder.swift in Sources */,
+				D273C8D72E16709D00142DBF /* ControlButton.swift in Sources */,
 				D273C89F2DEC8C8600142DBF /* WineType.swift in Sources */,
 				D273C8B62E0309DC00142DBF /* ControlPanelView.swift in Sources */,
 				D273C8B42E0309BF00142DBF /* MainScreenView.swift in Sources */,

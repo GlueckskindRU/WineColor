@@ -15,25 +15,24 @@ struct MainScreenView: View {
             // Фон
             viewModel.backgroundColor
                 .ignoresSafeArea()
-
+            
             // Текст
             if viewModel.isTextVisible {
-                ScrollView {
-                    Text(viewModel.placeholderText)
-                        .font(viewModel.font)
-                        .foregroundColor(.black.opacity(0.8))
-                        .padding()
-                        .multilineTextAlignment(.center)
-                }
+                Text(viewModel.placeholderText)
+                    .font(viewModel.font)
+                    .foregroundColor(.black.opacity(0.8))
+                    .padding()
+                    .multilineTextAlignment(.center)
+                    .padding(.bottom, 30)
             }
-
-            // Нижняя панель управления
-            VStack(spacing: 12) {
-                Spacer()
-                ControlPanelView(viewModel: viewModel)
-            }
-            .padding(.horizontal)
-            .padding(.bottom, 24)
+             // Нижняя панель управления
+             VStack(spacing: 12) {
+                 Spacer()
+                 ControlPanelView(viewModel: viewModel)
+                     .background(.white)
+             }
+             .padding(.horizontal)
+             .padding(.bottom, 24)
         }
     }
 }

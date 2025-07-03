@@ -1,0 +1,19 @@
+disabled_rules: # отключаем спорные или неудобные правила
+  - trailing_whitespace
+  - identifier_name
+  - force_cast
+  - line_length
+
+opt_in_rules: # опциональные, но полезные
+  - force_unwrapping
+  - closure_spacing
+
+included:
+  - WineColor
+  - WineColorTests
+
+excluded:
+  - Carthage
+  - Pods
+
+reporter: xcode

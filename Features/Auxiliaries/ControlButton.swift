@@ -14,9 +14,9 @@ enum ControlButton: CaseIterable {
 
     var title: String {
         switch self {
-            case .brightness: return "Brightness"
-            case .text: return "Text"
-            case .eyedropper: return "Eyedropper"
+            case .brightness: L10n.Main.Button.brightness
+            case .text: L10n.Main.Button.text
+            case .eyedropper: L10n.Main.Button.eyedropper
         }
     }
 

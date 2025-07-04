@@ -18,10 +18,10 @@ enum WineType: String, CaseIterable, Identifiable {
     /// Отображаемое имя — пригодится в UI
     var displayName: String {
         switch self {
-        case .white: return "White"
-        case .amber: return "Amber"
-        case .rose:  return "Rosé"
-        case .red:   return "Red"
+            case .white: L10n.Wines.whiteWine
+            case .amber: L10n.Wines.amberWine
+            case .rose: L10n.Wines.roseWine
+            case .red: L10n.Wines.redWine
         }
     }
     

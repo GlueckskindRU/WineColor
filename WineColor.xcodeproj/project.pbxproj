@@ -27,6 +27,8 @@
 		D273C8D72E16709D00142DBF /* ControlButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C8D62E16709D00142DBF /* ControlButton.swift */; };
 		D273C8D92E1672C000142DBF /* ActiveMode+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C8D82E1672C000142DBF /* ActiveMode+Extension.swift */; };
 		D273C8DB2E169E1D00142DBF /* LargeThumbSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C8DA2E169E1D00142DBF /* LargeThumbSlider.swift */; };
+		D28B5E912E16F82F00D21729 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = D28B5E902E16F82F00D21729 /* Localizable.xcstrings */; };
+		D28B5E932E17DFCC00D21729 /* L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28B5E922E17DFCC00D21729 /* L10n.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		D273C8D62E16709D00142DBF /* ControlButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlButton.swift; sourceTree = "<group>"; };
 		D273C8D82E1672C000142DBF /* ActiveMode+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActiveMode+Extension.swift"; sourceTree = "<group>"; };
 		D273C8DA2E169E1D00142DBF /* LargeThumbSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeThumbSlider.swift; sourceTree = "<group>"; };
+		D28B5E902E16F82F00D21729 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = Localizable.xcstrings; path = Localization/Localizable.xcstrings; sourceTree = "<group>"; };
+		D28B5E922E17DFCC00D21729 /* L10n.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = L10n.swift; path = Localization/L10n.swift; sourceTree = "<group>"; };
 		D2B399892DEB595F00389746 /* WineColor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WineColor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -218,6 +222,8 @@
 				D273C8DC2E16BABF00142DBF /* App */,
 				D2B399992DEB599300389746 /* Configuration */,
 				D273C8DE2E16C55C00142DBF /* Analytics */,
+				D28B5E902E16F82F00D21729 /* Localizable.xcstrings */,
+				D28B5E922E17DFCC00D21729 /* L10n.swift */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -327,6 +333,12 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
+				de,
+				fr,
+				it,
+				es,
+				"pt-PT",
 			);
 			mainGroup = D2B399802DEB595F00389746;
 			minimizedProjectReferenceProxies = 1;
@@ -353,6 +365,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D28B5E912E16F82F00D21729 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +418,7 @@
 				D273C8A52DEC909D00142DBF /* WinePalettes.swift in Sources */,
 				D273C8D92E1672C000142DBF /* ActiveMode+Extension.swift in Sources */,
 				D273C8CF2E042FAC00142DBF /* GradientBuilder.swift in Sources */,
+				D28B5E932E17DFCC00D21729 /* L10n.swift in Sources */,
 				D273C8D72E16709D00142DBF /* ControlButton.swift in Sources */,
 				D273C89F2DEC8C8600142DBF /* WineType.swift in Sources */,
 				D273C8B62E0309DC00142DBF /* ControlPanelView.swift in Sources */,
@@ -524,6 +538,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -581,6 +596,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

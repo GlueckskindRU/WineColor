@@ -10,9 +10,9 @@ import Foundation
 extension ActiveMode {
     var title: String {
         switch self {
-            case .none: "Brightness"
-            case .text: "Text size"
-            case .wine: "Color tone"
+            case .none: L10n.Slider.Brightness.hint
+            case .text: L10n.Slider.Text.hint
+            case .wine: L10n.Slider.Wine.hint
             case .eyedropper: .empty
         }
     }

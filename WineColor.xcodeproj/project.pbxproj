@@ -381,9 +381,8 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/WineColor",
-				"$(SRCROOT)/WineColorTests",
 				"$(SRCROOT)/.swiftlint.yml",
+				"$(SRCROOT)",
 			);
 			outputFileListPaths = (
 			);

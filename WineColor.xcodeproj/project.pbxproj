@@ -31,6 +31,7 @@
 		D28B5E932E17DFCC00D21729 /* L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28B5E922E17DFCC00D21729 /* L10n.swift */; };
 		D2F34B4D2E181A89005AF3B6 /* Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F34B4C2E181A89005AF3B6 /* Comparable.swift */; };
 		D2F34B502E1D237E005AF3B6 /* LargeThumbSlider+Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F34B4F2E1D237E005AF3B6 /* LargeThumbSlider+Config.swift */; };
+		D2F34B542E1D3B24005AF3B6 /* ColorWithBrightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F34B532E1D3B24005AF3B6 /* ColorWithBrightness.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		D2B399892DEB595F00389746 /* WineColor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WineColor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2F34B4C2E181A89005AF3B6 /* Comparable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comparable.swift; sourceTree = "<group>"; };
 		D2F34B4F2E1D237E005AF3B6 /* LargeThumbSlider+Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LargeThumbSlider+Config.swift"; sourceTree = "<group>"; };
+		D2F34B532E1D3B24005AF3B6 /* ColorWithBrightness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorWithBrightness.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -186,7 +188,7 @@
 		D273C8E42E16C59000142DBF /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				D29E067E2E16CA3A0037AB78 /* Utilities */,
+				D2F34B512E1D3B02005AF3B6 /* ColorDomain */,
 				D273C8E52E16C59700142DBF /* Models */,
 			);
 			path = Domain;
@@ -195,20 +197,9 @@
 		D273C8E52E16C59700142DBF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D273C89E2DEC8C8600142DBF /* WineType.swift */,
 				D273C8AE2E02AC5A00142DBF /* ActiveMode.swift */,
-				D273C8A22DEC907A00142DBF /* WinePalette.swift */,
-				D273C8A42DEC909D00142DBF /* WinePalettes.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		D29E067E2E16CA3A0037AB78 /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				D273C8CE2E042FAC00142DBF /* GradientBuilder.swift */,
-			);
-			path = Utilities;
 			sourceTree = "<group>";
 		};
 		D29E067F2E16CA670037AB78 /* Components */ = {
@@ -271,6 +262,42 @@
 				D2F34B4F2E1D237E005AF3B6 /* LargeThumbSlider+Config.swift */,
 			);
 			path = LargeThumbSlider;
+			sourceTree = "<group>";
+		};
+		D2F34B512E1D3B02005AF3B6 /* ColorDomain */ = {
+			isa = PBXGroup;
+			children = (
+				D2F34B562E1D3B50005AF3B6 /* Palette */,
+				D2F34B552E1D3B40005AF3B6 /* Builder */,
+				D2F34B522E1D3B10005AF3B6 /* Model */,
+			);
+			path = ColorDomain;
+			sourceTree = "<group>";
+		};
+		D2F34B522E1D3B10005AF3B6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D273C89E2DEC8C8600142DBF /* WineType.swift */,
+				D2F34B532E1D3B24005AF3B6 /* ColorWithBrightness.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D2F34B552E1D3B40005AF3B6 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				D273C8CE2E042FAC00142DBF /* GradientBuilder.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		D2F34B562E1D3B50005AF3B6 /* Palette */ = {
+			isa = PBXGroup;
+			children = (
+				D273C8A22DEC907A00142DBF /* WinePalette.swift */,
+				D273C8A42DEC909D00142DBF /* WinePalettes.swift */,
+			);
+			path = Palette;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -428,6 +455,7 @@
 				D273C8A82DEC90FD00142DBF /* Color.swift in Sources */,
 				D273C8DB2E169E1D00142DBF /* LargeThumbSlider.swift in Sources */,
 				D273C8D42E157C4700142DBF /* AnalyticsEvent.swift in Sources */,
+				D2F34B542E1D3B24005AF3B6 /* ColorWithBrightness.swift in Sources */,
 				D273C8AF2E02AC5A00142DBF /* ActiveMode.swift in Sources */,
 				D273C8A52DEC909D00142DBF /* WinePalettes.swift in Sources */,
 				D273C8D92E1672C000142DBF /* ActiveMode+Extension.swift in Sources */,

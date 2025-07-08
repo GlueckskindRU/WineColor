@@ -7,11 +7,6 @@
 
 import SwiftUI
 
-struct ColorWithBrightness: Equatable {
-    let color: Color
-    let brightness: CGFloat
-}
-
 struct GradientBuilder {
     static func perceptualGradient(from input: [ColorWithBrightness]) -> Gradient {
         guard input.isNotEmpty else {

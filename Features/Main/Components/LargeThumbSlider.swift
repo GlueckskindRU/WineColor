@@ -23,8 +23,9 @@ struct LargeThumbSlider: View {
     var body: some View {
         GeometryReader { geometry in
             let width = geometry.size.width
-            let clampedValue = min(max(value, range.lowerBound), range.upperBound)
-            let sliderPosition = CGFloat((clampedValue - range.lowerBound) / (range.upperBound - range.lowerBound)) * width
+            let clampedValue = value.clamped(to: range)
+            let progress = (clampedValue - range.lowerBound) / (range.upperBound - range.lowerBound)
+            let sliderPosition = progress * width
 
             ZStack(alignment: .leading) {
                 Capsule()
@@ -45,8 +46,8 @@ struct LargeThumbSlider: View {
                             .onChanged { gesture in
                                 let newLocation = gesture.location.x
                                 let percent = min(max(newLocation / width, 0), 1)
-                                let newValue = Double(percent) * (range.upperBound - range.lowerBound) + range.lowerBound
-                                self.value = newValue
+                                let newValue = percent * (range.upperBound - range.lowerBound) + range.lowerBound
+                                value = newValue
                             }
                     )
             }

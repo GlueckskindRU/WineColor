@@ -20,32 +20,6 @@ final class MainViewModel: ObservableObject {
     @Published var brightness = BrightnessViewModel()
     @Published var text = TextViewModel()
 
-    // MARK: - Private
-
-    private let lifecycleObserver: AppLifecycleObserver
-    private var savedSystemBrightness: CGFloat = UIScreen.main.brightness
-
-    // MARK: - Init
-
-    init(observer: AppLifecycleObserver = AppLifecycleObserver()) {
-        self.lifecycleObserver = observer
-        self.brightness.value = UIScreen.main.brightness
-
-        lifecycleObserver.observe(
-            onForeground: { [weak self] in
-                guard let self else { return }
-                self.savedSystemBrightness = UIScreen.main.brightness
-                if self.mode == .none {
-                    UIScreen.main.brightness = self.brightness.value
-                }
-            },
-            onBackground: { [weak self] in
-                guard let self else { return }
-                UIScreen.main.brightness = self.savedSystemBrightness
-            }
-        )
-    }
-
     // MARK: - Mode Checks
 
     var isBrightnessMode: Bool { mode.isBrightness }
@@ -103,13 +77,6 @@ final class MainViewModel: ObservableObject {
         }
     }
 
-    // MARK: - Brightness
-
-    func updateBrightness(to newValue: CGFloat) {
-        brightness.value = newValue
-        UIScreen.main.brightness = newValue
-    }
-
     // MARK: - Slider Binding
 
     var sliderValue: Binding<CGFloat> {
@@ -125,7 +92,7 @@ final class MainViewModel: ObservableObject {
         } set: { newValue in
             switch self.mode {
                 case .none:
-                    self.updateBrightness(to: newValue)
+                    self.brightness.value = newValue
                 case .text:
                     self.text.fontSize = newValue
                 case .eyedropper:

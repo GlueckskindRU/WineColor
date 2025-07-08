@@ -10,7 +10,6 @@ import Foundation
 enum ActiveMode: Equatable {
     case none
     case text
-    case wine(WineType)
     case eyedropper
 
     var isBrightness: Bool {
@@ -21,20 +20,6 @@ enum ActiveMode: Equatable {
         self == .text
     }
 
-    var isWine: Bool {
-        if case .wine = self {
-            return true
-        }
-        return false
-    }
-
-    var selectedWineType: WineType? {
-        if case let .wine(type) = self {
-            return type
-        }
-        return nil
-    }
-    
     var isEyedropperMode: Bool {
         self == .eyedropper
     }

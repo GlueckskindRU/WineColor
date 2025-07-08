@@ -12,7 +12,6 @@ extension ActiveMode {
         switch self {
             case .none: L10n.Slider.Brightness.hint
             case .text: L10n.Slider.Text.hint
-            case .wine: L10n.Slider.Wine.hint
             case .eyedropper: .empty
         }
     }
@@ -21,7 +20,6 @@ extension ActiveMode {
         switch self {
             case .none: "lightbulb.max"
             case .text: "text.page"
-            case .wine: "drop"
             case .eyedropper: "camera"
         }
     }
@@ -30,7 +28,6 @@ extension ActiveMode {
         switch self {
             case .none: "lightbulb.max.fill"
             case .text: "text.page.fill"
-            case .wine: "drop.fill"
             case .eyedropper: "camera.fill"
         }
     }

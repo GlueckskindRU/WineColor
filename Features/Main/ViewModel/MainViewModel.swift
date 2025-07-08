@@ -17,9 +17,8 @@ final class MainViewModel: ObservableObject {
         }
     }
 
-    @Published var brightness: CGFloat // используется только в ActiveMode.none
-    @Published var textScale: CGFloat = 0.5 // 0...1
-    @Published var palettePosition: CGFloat = 0.5 // 0...1
+    @Published var brightness = BrightnessViewModel()
+    @Published var text = TextViewModel()
 
     // MARK: - Private
 
@@ -30,14 +29,14 @@ final class MainViewModel: ObservableObject {
 
     init(observer: AppLifecycleObserver = AppLifecycleObserver()) {
         self.lifecycleObserver = observer
-        self.brightness = UIScreen.main.brightness
+        self.brightness.value = UIScreen.main.brightness
 
         lifecycleObserver.observe(
             onForeground: { [weak self] in
                 guard let self else { return }
                 self.savedSystemBrightness = UIScreen.main.brightness
                 if self.mode == .none {
-                    UIScreen.main.brightness = self.brightness
+                    UIScreen.main.brightness = self.brightness.value
                 }
             },
             onBackground: { [weak self] in
@@ -51,7 +50,6 @@ final class MainViewModel: ObservableObject {
 
     var isBrightnessMode: Bool { mode.isBrightness }
     var isTextMode: Bool { mode.isText }
-    var isWineMode: Bool { mode.isWine }
     var isEyedropperMode: Bool { mode == .eyedropper }
 
     // MARK: - Text
@@ -59,7 +57,7 @@ final class MainViewModel: ObservableObject {
     var font: Font {
         let base: CGFloat = 14
         let max: CGFloat = 40
-        let size = base + (max - base) * textScale
+        let size = base + (max - base) * text.fontSize
         return .system(size: size)
     }
 
@@ -108,7 +106,7 @@ final class MainViewModel: ObservableObject {
     // MARK: - Brightness
 
     func updateBrightness(to newValue: CGFloat) {
-        brightness = newValue
+        brightness.value = newValue
         UIScreen.main.brightness = newValue
     }
 
@@ -118,11 +116,9 @@ final class MainViewModel: ObservableObject {
         Binding {
             switch self.mode {
                 case .none:
-                    return self.brightness
+                    return self.brightness.value
                 case .text:
-                    return self.textScale
-                case .wine:
-                    return self.palettePosition
+                    return self.text.fontSize
                 case .eyedropper:
                     return .zero
             }
@@ -131,9 +127,7 @@ final class MainViewModel: ObservableObject {
                 case .none:
                     self.updateBrightness(to: newValue)
                 case .text:
-                    self.textScale = newValue
-                case .wine:
-                    self.palettePosition = newValue
+                    self.text.fontSize = newValue
                 case .eyedropper:
                     break
             }
@@ -150,8 +144,6 @@ final class MainViewModel: ObservableObject {
                 event = AnalyticsEvent(name: "mode_brightness")
             case .text:
                 event = AnalyticsEvent(name: "mode_text")
-            case .wine(let type):
-                event = AnalyticsEvent(name: "mode_wine", parameters: ["type": type.rawValue])
             case .eyedropper:
                 event = AnalyticsEvent(name: "mode_eyedropper")
         }

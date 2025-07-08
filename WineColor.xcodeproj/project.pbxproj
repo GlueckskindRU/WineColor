@@ -32,6 +32,8 @@
 		D2F34B4D2E181A89005AF3B6 /* Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F34B4C2E181A89005AF3B6 /* Comparable.swift */; };
 		D2F34B502E1D237E005AF3B6 /* LargeThumbSlider+Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F34B4F2E1D237E005AF3B6 /* LargeThumbSlider+Config.swift */; };
 		D2F34B542E1D3B24005AF3B6 /* ColorWithBrightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F34B532E1D3B24005AF3B6 /* ColorWithBrightness.swift */; };
+		D2F34B592E1D5FE3005AF3B6 /* BrightnessViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F34B582E1D5FE3005AF3B6 /* BrightnessViewModel.swift */; };
+		D2F34B5B2E1D5FFD005AF3B6 /* TextViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F34B5A2E1D5FFD005AF3B6 /* TextViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,8 @@
 		D2F34B4C2E181A89005AF3B6 /* Comparable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comparable.swift; sourceTree = "<group>"; };
 		D2F34B4F2E1D237E005AF3B6 /* LargeThumbSlider+Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LargeThumbSlider+Config.swift"; sourceTree = "<group>"; };
 		D2F34B532E1D3B24005AF3B6 /* ColorWithBrightness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorWithBrightness.swift; sourceTree = "<group>"; };
+		D2F34B582E1D5FE3005AF3B6 /* BrightnessViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrightnessViewModel.swift; sourceTree = "<group>"; };
+		D2F34B5A2E1D5FFD005AF3B6 /* TextViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -181,6 +185,8 @@
 			isa = PBXGroup;
 			children = (
 				D273C8B02E02ACD000142DBF /* MainViewModel.swift */,
+				D2F34B582E1D5FE3005AF3B6 /* BrightnessViewModel.swift */,
+				D2F34B5A2E1D5FFD005AF3B6 /* TextViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -454,10 +460,12 @@
 				D273C8B82E0309F400142DBF /* ModeButtonView.swift in Sources */,
 				D273C8A82DEC90FD00142DBF /* Color.swift in Sources */,
 				D273C8DB2E169E1D00142DBF /* LargeThumbSlider.swift in Sources */,
+				D2F34B5B2E1D5FFD005AF3B6 /* TextViewModel.swift in Sources */,
 				D273C8D42E157C4700142DBF /* AnalyticsEvent.swift in Sources */,
 				D2F34B542E1D3B24005AF3B6 /* ColorWithBrightness.swift in Sources */,
 				D273C8AF2E02AC5A00142DBF /* ActiveMode.swift in Sources */,
 				D273C8A52DEC909D00142DBF /* WinePalettes.swift in Sources */,
+				D2F34B592E1D5FE3005AF3B6 /* BrightnessViewModel.swift in Sources */,
 				D273C8D92E1672C000142DBF /* ActiveMode+Extension.swift in Sources */,
 				D273C8CF2E042FAC00142DBF /* GradientBuilder.swift in Sources */,
 				D28B5E932E17DFCC00D21729 /* L10n.swift in Sources */,

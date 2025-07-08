@@ -18,9 +18,15 @@ struct ControlPanelView: View {
                         .font(.headline)
                         .fontWeight(.bold)
                     Spacer()
-                    LargeThumbSlider(value: viewModel.sliderValue, config: .large)
-                        .frame(height: 44) // задаёт минимальную высоту
-                        .padding(.horizontal)
+                    if viewModel.isTextMode {
+                        LargeThumbSlider(value: $viewModel.text.fontSize, config: .large)
+                            .frame(height: 44) // задаёт минимальную высоту
+                            .padding(.horizontal)
+                    } else if viewModel.isBrightnessMode {
+                        LargeThumbSlider(value: $viewModel.brightness.value, config: .large)
+                            .frame(height: 44) // задаёт минимальную высоту
+                            .padding(.horizontal)
+                    }
                 }
                 .padding()
                 .background(

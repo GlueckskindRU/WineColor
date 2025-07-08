@@ -7,44 +7,38 @@
 
 import SwiftUI
 
-typealias ColorWithBrightness = (color: Color, brightness: CGFloat)
+struct ColorWithBrightness: Equatable {
+    let color: Color
+    let brightness: CGFloat
+}
 
 struct GradientBuilder {
-    static func sortColorsWithBrightness(from colors: [Color]) -> [ColorWithBrightness] {
-        guard colors.isNotEmpty else { return [] }
-        
-        // Считаем пары (цвет + яркость), исключаем белые
-        return colors
-            .map { ($0, $0.brightness) }
-            .filter { $0.1 < 1.0 }
-    }
-    
-    static func makePerceptualGradient(from colors: [Color]) -> Gradient {
-        guard colors.isNotEmpty else { return Gradient(colors: [.clear]) }
-
-        let colorBrightnessPairs = sortColorsWithBrightness(from: colors)
-        
-        guard !colorBrightnessPairs.isEmpty else {
-            return Gradient(colors: colors)
+    static func perceptualGradient(from input: [ColorWithBrightness]) -> Gradient {
+        guard input.isNotEmpty else {
+            return Gradient(colors: [])
         }
 
-        let brightnesses = colorBrightnessPairs.map(\.1)
+        let sorted = input.sorted { $0.brightness < $1.brightness }
+
         guard
-            let min = brightnesses.min(),
-            let max = brightnesses.max(),
-            min != max
+            let minBrightness = sorted.first?.brightness,
+            let maxBrightness = sorted.last?.brightness
         else {
-            return Gradient(colors: colorBrightnessPairs.map(\.0))
+            return Gradient(colors: sorted.map(\.color))
         }
 
-        let stops = colorBrightnessPairs.map { color, brightness in
-            let normalized = 1.0 - (brightness - min) / (max - min)
-            return Gradient.Stop(color: color, location: normalized)
+        if minBrightness == maxBrightness {
+            return Gradient(colors: sorted.map(\.color))
         }
 
-        let sortedStops = stops.sorted { $0.location < $1.location }
+        let stops = sorted.map {
+            Gradient.Stop(
+                color: $0.color,
+                location: ($0.brightness - minBrightness) / (maxBrightness - minBrightness)
+            )
+        }
 
-        return Gradient(stops: sortedStops)
+        return Gradient(stops: stops)
     }
 }
 

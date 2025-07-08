@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainScreenView: View {
     @ObservedObject var viewModel: MainViewModel
+    @StateObject private var appState = AppState()
 
     var body: some View {
         ZStack {
@@ -28,8 +29,13 @@ struct MainScreenView: View {
              // Нижняя панель управления
              VStack(spacing: 12) {
                  Spacer()
-                 ControlPanelView(viewModel: viewModel)
-                     .background(.white)
+                 ControlPanelView(
+                    activeMode: $viewModel.mode,
+                    brightnessViewModel: appState.brightness,
+                    textViewModel: appState.text,
+                    eyedropperViewModel: appState.eyedropper
+                 )
+                 .background(.white)
              }
              .padding(.horizontal)
              .padding(.bottom, 24)

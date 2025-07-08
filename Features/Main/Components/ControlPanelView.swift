@@ -8,23 +8,26 @@
 import SwiftUI
 
 struct ControlPanelView: View {
-    @ObservedObject var viewModel: MainViewModel
+    @Binding var activeMode: ActiveMode
+    @ObservedObject var brightnessViewModel: BrightnessViewModel
+    @ObservedObject var textViewModel: TextViewModel
+    @ObservedObject var eyedropperViewModel: EyedropperViewModel
 
     var body: some View {
         VStack(spacing: 20) {
-            if !viewModel.isEyedropperMode {
+            if activeMode.isSliderEnabled {
                 HStack(spacing: 12) {
-                    Label(viewModel.mode.title, systemImage: viewModel.mode.iconSelected)
+                    Label(activeMode.hint, systemImage: activeMode.iconSelected)
                         .font(.headline)
                         .fontWeight(.bold)
                     Spacer()
-                    if viewModel.isTextMode {
-                        LargeThumbSlider(value: $viewModel.text.fontSize, config: .large)
-                            .frame(height: 44) // задаёт минимальную высоту
+                    if activeMode.isText {
+                        LargeThumbSlider(value: $textViewModel.fontSize, config: .large)
+                            .frame(height: 44)
                             .padding(.horizontal)
-                    } else if viewModel.isBrightnessMode {
-                        LargeThumbSlider(value: $viewModel.brightness.value, config: .large)
-                            .frame(height: 44) // задаёт минимальную высоту
+                    } else if activeMode.isBrightness {
+                        LargeThumbSlider(value: $brightnessViewModel.value, config: .large)
+                            .frame(height: 44)
                             .padding(.horizontal)
                     }
                 }
@@ -40,20 +43,8 @@ struct ControlPanelView: View {
             }
 
             HStack {
-                ForEach(ControlButton.allCases, id: \.self) { button in
-                    Button(action: {
-                        viewModel.select(button)
-                    }) {
-                        VStack(spacing: 4) {
-                            Image(systemName: viewModel.isSelected(button) ? button.iconSelected : button.icon)
-                                .font(.system(size: 30, weight: .regular))
-                            Text(button.title)
-                                .font(.footnote)
-                        }
-                        .foregroundColor(viewModel.isSelected(button) ? .black : .primary)
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                    }
+                ForEach(ActiveMode.allCases, id: \.self) { mode in
+                    ControlButtonView(mode: mode, selectedMode: $activeMode)
                 }
             }
             .padding(.top, 4)

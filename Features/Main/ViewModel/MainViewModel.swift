@@ -11,7 +11,7 @@ import SwiftUI
 final class MainViewModel: ObservableObject {
     // MARK: - Input State
 
-    @Published var mode: ActiveMode = .none {
+    @Published var mode: ActiveMode = .brightness {
         didSet {
             logModeChange()
         }
@@ -54,35 +54,13 @@ final class MainViewModel: ObservableObject {
     }
 
     var backgroundColor: Color = .white
-    
-    func isSelected(_ button: ControlButton) -> Bool {
-        switch (button, mode) {
-        case (.brightness, .none),
-             (.text, .text),
-             (.eyedropper, .eyedropper):
-            return true
-        default:
-            return false
-        }
-    }
-    
-    func select(_ button: ControlButton) {
-        switch button {
-            case .brightness:
-                mode = .none
-            case .text:
-                mode = .text
-            case .eyedropper:
-                mode = .eyedropper
-        }
-    }
 
     // MARK: - Slider Binding
 
     var sliderValue: Binding<CGFloat> {
         Binding {
             switch self.mode {
-                case .none:
+                case .brightness:
                     return self.brightness.value
                 case .text:
                     return self.text.fontSize
@@ -91,7 +69,7 @@ final class MainViewModel: ObservableObject {
             }
         } set: { newValue in
             switch self.mode {
-                case .none:
+                case .brightness:
                     self.brightness.value = newValue
                 case .text:
                     self.text.fontSize = newValue
@@ -107,7 +85,7 @@ final class MainViewModel: ObservableObject {
         let event: AnalyticsEvent
 
         switch mode {
-            case .none:
+            case .brightness:
                 event = AnalyticsEvent(name: "mode_brightness")
             case .text:
                 event = AnalyticsEvent(name: "mode_text")

@@ -7,13 +7,13 @@
 
 import Foundation
 
-enum ActiveMode: Equatable {
-    case none
+enum ActiveMode: Equatable, CaseIterable {
+    case brightness
     case text
     case eyedropper
 
     var isBrightness: Bool {
-        self == .none
+        self == .brightness
     }
 
     var isText: Bool {

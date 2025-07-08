@@ -18,7 +18,7 @@ struct ControlPanelView: View {
                         .font(.headline)
                         .fontWeight(.bold)
                     Spacer()
-                    LargeThumbSlider(value: viewModel.sliderValue, range: 0...1, thumbSize: 50)
+                    LargeThumbSlider(value: viewModel.sliderValue, config: .large)
                         .frame(height: 44) // задаёт минимальную высоту
                         .padding(.horizontal)
                 }

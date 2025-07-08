@@ -40,6 +40,9 @@ final class BrightnessViewModel: ObservableObject {
     }
     
     deinit {
-        UIScreen.main.brightness = savedSystemBrightness
+        Task { @MainActor [weak self] in
+            guard let self else { return }
+            UIScreen.main.brightness = savedSystemBrightness
+        }
     }
 }

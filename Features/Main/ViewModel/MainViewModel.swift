@@ -17,9 +17,14 @@ final class MainViewModel: ObservableObject {
         }
     }
 
-    @Published var brightness = BrightnessViewModel()
-    @Published var text = TextViewModel()
+    let appState: AppState
 
+    // MARK: - Initialization
+    
+    init(appState: AppState) {
+        self.appState = appState
+    }
+    
     // MARK: - Mode Checks
 
     var isBrightnessMode: Bool { mode.isBrightness }
@@ -31,7 +36,7 @@ final class MainViewModel: ObservableObject {
     var font: Font {
         let base: CGFloat = 14
         let max: CGFloat = 40
-        let size = base + (max - base) * text.fontSize
+        let size = base + (max - base) * appState.text.fontSize
         return .system(size: size)
     }
 
@@ -61,18 +66,18 @@ final class MainViewModel: ObservableObject {
         Binding {
             switch self.mode {
                 case .brightness:
-                    return self.brightness.value
+                    return self.appState.brightness.value
                 case .text:
-                    return self.text.fontSize
+                    return self.appState.text.fontSize
                 case .eyedropper:
                     return .zero
             }
         } set: { newValue in
             switch self.mode {
                 case .brightness:
-                    self.brightness.value = newValue
+                    self.appState.brightness.value = newValue
                 case .text:
-                    self.text.fontSize = newValue
+                    self.appState.text.fontSize = newValue
                 case .eyedropper:
                     break
             }

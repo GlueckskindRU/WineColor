@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct WineColorApp: App {
-    @StateObject private var viewModel = MainViewModel()
+    @StateObject private var appState = AppState()
     
     init() {
         Analytics.log(AnalyticsEvent(name: "app_opened"))
@@ -17,7 +17,12 @@ struct WineColorApp: App {
 
     var body: some Scene {
         WindowGroup {
-            MainScreenView(viewModel: viewModel)
+            MainScreenView(
+                viewModel: MainViewModel(appState: appState),
+                brightnessViewModel: appState.brightness,
+                textViewModel: appState.text,
+                eyedropperViewModel: appState.eyedropper
+            )
         }
     }
 }

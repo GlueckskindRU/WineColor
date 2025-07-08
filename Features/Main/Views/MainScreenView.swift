@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct MainScreenView: View {
-    @ObservedObject var viewModel: MainViewModel
-    @StateObject private var appState = AppState()
-
+    @StateObject var viewModel: MainViewModel
+    let brightnessViewModel: BrightnessViewModel
+    let textViewModel: TextViewModel
+    let eyedropperViewModel: EyedropperViewModel
+    
     var body: some View {
         ZStack {
             // Фон
@@ -31,9 +33,9 @@ struct MainScreenView: View {
                  Spacer()
                  ControlPanelView(
                     activeMode: $viewModel.mode,
-                    brightnessViewModel: appState.brightness,
-                    textViewModel: appState.text,
-                    eyedropperViewModel: appState.eyedropper
+                    brightnessViewModel: brightnessViewModel,
+                    textViewModel: textViewModel,
+                    eyedropperViewModel: eyedropperViewModel
                  )
                  .background(.white)
              }

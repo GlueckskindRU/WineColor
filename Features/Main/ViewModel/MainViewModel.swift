@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 @MainActor
 final class MainViewModel: ObservableObject {
@@ -22,10 +23,19 @@ final class MainViewModel: ObservableObject {
     let backgroundColor = Color.white
     let appState: AppState
 
-    // MARK: - Initialization
+    private var cancellables = Set<AnyCancellable>()
     
+    // MARK: - Initialization
+
     init(appState: AppState) {
         self.appState = appState
+
+        appState.text.$fontSize
+            .receive(on: RunLoop.main)
+            .sink { [weak self] newSize in
+                self?.objectWillChange.send()
+            }
+            .store(in: &cancellables)
     }
     
     // MARK: - Mode Checks

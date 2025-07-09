@@ -12,7 +12,7 @@ struct ControlButtonView: View {
     @Binding var selectedMode: ActiveMode
 
     private var isSelected: Bool {
-        selectedMode == mode || (mode == .brightness && selectedMode == .brightness)
+        selectedMode == mode
     }
 
     var body: some View {

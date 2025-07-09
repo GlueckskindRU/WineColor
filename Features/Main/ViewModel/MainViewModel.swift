@@ -17,6 +17,9 @@ final class MainViewModel: ObservableObject {
         }
     }
 
+    // MARK: - Properties
+    
+    let backgroundColor = Color.white
     let appState: AppState
 
     // MARK: - Initialization
@@ -53,12 +56,6 @@ final class MainViewModel: ObservableObject {
         Mauris egestas libero semper lacus elementum, sed ultricies felis pulvinar. Aenean volutpat dignissim nunc. Aenean sed leo turpis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam sed congue neque, nec porttitor felis. Nunc congue sagittis justo, faucibus congue mi consectetur pulvinar. Vivamus leo lacus, egestas non sollicitudin at, facilisis sit amet nibh. Donec fringilla sagittis erat congue ultricies. Suspendisse tincidunt lorem ac tellus maximus scelerisque. Etiam eget libero risus. Nam porta rhoncus erat, eget pharetra urna gravida id. Suspendisse vel urna eu massa congue sagittis sed at diam.
         """
     }
-
-    var isTextVisible: Bool {
-        mode == .text
-    }
-
-    var backgroundColor: Color = .white
 
     // MARK: - Slider Binding
 

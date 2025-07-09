@@ -20,7 +20,7 @@ struct MainScreenView: View {
                 .ignoresSafeArea()
             
             // Текст
-            if viewModel.isTextVisible {
+            if viewModel.isTextMode {
                 Text(viewModel.placeholderText)
                     .font(viewModel.font)
                     .foregroundColor(.black.opacity(0.8))

@@ -9,10 +9,6 @@
 /* Begin PBXBuildFile section */
 		D273C8992DEB59E300142DBF /* WineColorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C8972DEB59E300142DBF /* WineColorApp.swift */; };
 		D273C89D2DEB5D8B00142DBF /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C89C2DEB5D8B00142DBF /* AppEnvironment.swift */; };
-		D273C89F2DEC8C8600142DBF /* WineType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C89E2DEC8C8600142DBF /* WineType.swift */; };
-		D273C8A32DEC907A00142DBF /* WinePalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C8A22DEC907A00142DBF /* WinePalette.swift */; };
-		D273C8A52DEC909D00142DBF /* WinePalettes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C8A42DEC909D00142DBF /* WinePalettes.swift */; };
-		D273C8A82DEC90FD00142DBF /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C8A72DEC90FD00142DBF /* Color.swift */; };
 		D273C8AB2DEC945100142DBF /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C8AA2DEC945100142DBF /* String.swift */; };
 		D273C8AD2DEC94D000142DBF /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C8AC2DEC94D000142DBF /* Collection.swift */; };
 		D273C8AF2E02AC5A00142DBF /* ActiveMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C8AE2E02AC5A00142DBF /* ActiveMode.swift */; };
@@ -20,7 +16,6 @@
 		D273C8B42E0309BF00142DBF /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C8B32E0309BF00142DBF /* MainScreenView.swift */; };
 		D273C8B62E0309DC00142DBF /* ControlPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C8B52E0309DC00142DBF /* ControlPanelView.swift */; };
 		D273C8BA2E03247800142DBF /* AppLifecycleObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C8B92E03247800142DBF /* AppLifecycleObserver.swift */; };
-		D273C8CF2E042FAC00142DBF /* GradientBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C8CE2E042FAC00142DBF /* GradientBuilder.swift */; };
 		D273C8D22E157C2900142DBF /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C8D12E157C2900142DBF /* Analytics.swift */; };
 		D273C8D42E157C4700142DBF /* AnalyticsEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C8D32E157C4700142DBF /* AnalyticsEvent.swift */; };
 		D273C8D92E1672C000142DBF /* ActiveMode+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C8D82E1672C000142DBF /* ActiveMode+Extension.swift */; };
@@ -29,7 +24,6 @@
 		D28B5E932E17DFCC00D21729 /* L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28B5E922E17DFCC00D21729 /* L10n.swift */; };
 		D2F34B4D2E181A89005AF3B6 /* Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F34B4C2E181A89005AF3B6 /* Comparable.swift */; };
 		D2F34B502E1D237E005AF3B6 /* LargeThumbSlider+Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F34B4F2E1D237E005AF3B6 /* LargeThumbSlider+Config.swift */; };
-		D2F34B542E1D3B24005AF3B6 /* ColorWithBrightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F34B532E1D3B24005AF3B6 /* ColorWithBrightness.swift */; };
 		D2F34B592E1D5FE3005AF3B6 /* BrightnessViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F34B582E1D5FE3005AF3B6 /* BrightnessViewModel.swift */; };
 		D2F34B5B2E1D5FFD005AF3B6 /* TextViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F34B5A2E1D5FFD005AF3B6 /* TextViewModel.swift */; };
 		D2F34B5D2E1D72FF005AF3B6 /* EyedropperViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F34B5C2E1D72FF005AF3B6 /* EyedropperViewModel.swift */; };
@@ -50,10 +44,6 @@
 /* Begin PBXFileReference section */
 		D273C8972DEB59E300142DBF /* WineColorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineColorApp.swift; sourceTree = "<group>"; };
 		D273C89C2DEB5D8B00142DBF /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
-		D273C89E2DEC8C8600142DBF /* WineType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineType.swift; sourceTree = "<group>"; };
-		D273C8A22DEC907A00142DBF /* WinePalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinePalette.swift; sourceTree = "<group>"; };
-		D273C8A42DEC909D00142DBF /* WinePalettes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinePalettes.swift; sourceTree = "<group>"; };
-		D273C8A72DEC90FD00142DBF /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		D273C8AA2DEC945100142DBF /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		D273C8AC2DEC94D000142DBF /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		D273C8AE2E02AC5A00142DBF /* ActiveMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveMode.swift; sourceTree = "<group>"; };
@@ -62,7 +52,6 @@
 		D273C8B52E0309DC00142DBF /* ControlPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlPanelView.swift; sourceTree = "<group>"; };
 		D273C8B92E03247800142DBF /* AppLifecycleObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLifecycleObserver.swift; sourceTree = "<group>"; };
 		D273C8BF2E03291100142DBF /* WineColorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WineColorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D273C8CE2E042FAC00142DBF /* GradientBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBuilder.swift; sourceTree = "<group>"; };
 		D273C8D12E157C2900142DBF /* Analytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
 		D273C8D32E157C4700142DBF /* AnalyticsEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsEvent.swift; sourceTree = "<group>"; };
 		D273C8D82E1672C000142DBF /* ActiveMode+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActiveMode+Extension.swift"; sourceTree = "<group>"; };
@@ -72,7 +61,6 @@
 		D2B399892DEB595F00389746 /* WineColor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WineColor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2F34B4C2E181A89005AF3B6 /* Comparable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comparable.swift; sourceTree = "<group>"; };
 		D2F34B4F2E1D237E005AF3B6 /* LargeThumbSlider+Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LargeThumbSlider+Config.swift"; sourceTree = "<group>"; };
-		D2F34B532E1D3B24005AF3B6 /* ColorWithBrightness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorWithBrightness.swift; sourceTree = "<group>"; };
 		D2F34B582E1D5FE3005AF3B6 /* BrightnessViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrightnessViewModel.swift; sourceTree = "<group>"; };
 		D2F34B5A2E1D5FFD005AF3B6 /* TextViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewModel.swift; sourceTree = "<group>"; };
 		D2F34B5C2E1D72FF005AF3B6 /* EyedropperViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyedropperViewModel.swift; sourceTree = "<group>"; };
@@ -148,7 +136,6 @@
 		D273C8DF2E16C56600142DBF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				D273C8A72DEC90FD00142DBF /* Color.swift */,
 				D273C8AA2DEC945100142DBF /* String.swift */,
 				D273C8AC2DEC94D000142DBF /* Collection.swift */,
 				D2F34B4C2E181A89005AF3B6 /* Comparable.swift */,
@@ -197,7 +184,6 @@
 		D273C8E42E16C59000142DBF /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				D2F34B512E1D3B02005AF3B6 /* ColorDomain */,
 				D273C8E52E16C59700142DBF /* Models */,
 			);
 			path = Domain;
@@ -271,42 +257,6 @@
 				D2F34B4F2E1D237E005AF3B6 /* LargeThumbSlider+Config.swift */,
 			);
 			path = LargeThumbSlider;
-			sourceTree = "<group>";
-		};
-		D2F34B512E1D3B02005AF3B6 /* ColorDomain */ = {
-			isa = PBXGroup;
-			children = (
-				D2F34B562E1D3B50005AF3B6 /* Palette */,
-				D2F34B552E1D3B40005AF3B6 /* Builder */,
-				D2F34B522E1D3B10005AF3B6 /* Model */,
-			);
-			path = ColorDomain;
-			sourceTree = "<group>";
-		};
-		D2F34B522E1D3B10005AF3B6 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				D273C89E2DEC8C8600142DBF /* WineType.swift */,
-				D2F34B532E1D3B24005AF3B6 /* ColorWithBrightness.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		D2F34B552E1D3B40005AF3B6 /* Builder */ = {
-			isa = PBXGroup;
-			children = (
-				D273C8CE2E042FAC00142DBF /* GradientBuilder.swift */,
-			);
-			path = Builder;
-			sourceTree = "<group>";
-		};
-		D2F34B562E1D3B50005AF3B6 /* Palette */ = {
-			isa = PBXGroup;
-			children = (
-				D273C8A22DEC907A00142DBF /* WinePalette.swift */,
-				D273C8A42DEC909D00142DBF /* WinePalettes.swift */,
-			);
-			path = Palette;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -458,21 +408,15 @@
 			files = (
 				D273C8AD2DEC94D000142DBF /* Collection.swift in Sources */,
 				D2F34B4D2E181A89005AF3B6 /* Comparable.swift in Sources */,
-				D273C8A32DEC907A00142DBF /* WinePalette.swift in Sources */,
 				D273C8D22E157C2900142DBF /* Analytics.swift in Sources */,
-				D273C8A82DEC90FD00142DBF /* Color.swift in Sources */,
 				D273C8DB2E169E1D00142DBF /* LargeThumbSlider.swift in Sources */,
 				D2F34B5B2E1D5FFD005AF3B6 /* TextViewModel.swift in Sources */,
 				D273C8D42E157C4700142DBF /* AnalyticsEvent.swift in Sources */,
 				D2F34B5D2E1D72FF005AF3B6 /* EyedropperViewModel.swift in Sources */,
-				D2F34B542E1D3B24005AF3B6 /* ColorWithBrightness.swift in Sources */,
 				D273C8AF2E02AC5A00142DBF /* ActiveMode.swift in Sources */,
-				D273C8A52DEC909D00142DBF /* WinePalettes.swift in Sources */,
 				D2F34B592E1D5FE3005AF3B6 /* BrightnessViewModel.swift in Sources */,
 				D273C8D92E1672C000142DBF /* ActiveMode+Extension.swift in Sources */,
-				D273C8CF2E042FAC00142DBF /* GradientBuilder.swift in Sources */,
 				D28B5E932E17DFCC00D21729 /* L10n.swift in Sources */,
-				D273C89F2DEC8C8600142DBF /* WineType.swift in Sources */,
 				D2F34B612E1D7F70005AF3B6 /* ControlButtonView.swift in Sources */,
 				D2F34B502E1D237E005AF3B6 /* LargeThumbSlider+Config.swift in Sources */,
 				D273C8B62E0309DC00142DBF /* ControlPanelView.swift in Sources */,

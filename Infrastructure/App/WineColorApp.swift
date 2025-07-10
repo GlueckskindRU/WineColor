@@ -18,7 +18,7 @@ struct WineColorApp: App {
     var body: some Scene {
         WindowGroup {
             MainScreenView(
-                viewModel: MainViewModel(appState: appState),
+                viewModel: MainScreenViewModel(appState: appState),
                 brightnessViewModel: appState.brightness,
                 textViewModel: appState.text,
                 eyedropperViewModel: appState.eyedropper

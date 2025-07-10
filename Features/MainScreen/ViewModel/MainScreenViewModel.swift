@@ -1,5 +1,5 @@
 //
-//  MainViewModel.swift
+//  MainScreenViewModel.swift
 //  WineColor
 //
 //  Created by Yuri Ivashin on 18.06.2025.
@@ -9,7 +9,7 @@ import SwiftUI
 import Combine
 
 @MainActor
-final class MainViewModel: ObservableObject {
+final class MainScreenViewModel: ObservableObject {
     // MARK: - Input State
 
     @Published var mode: ActiveMode = .brightness {
@@ -42,7 +42,7 @@ final class MainViewModel: ObservableObject {
 
     var isBrightnessMode: Bool { mode.isBrightness }
     var isTextMode: Bool { mode.isText }
-    var isEyedropperMode: Bool { mode == .eyedropper }
+    var isEyedropperMode: Bool { mode.isEyedropperMode }
 
     // MARK: - Text
 

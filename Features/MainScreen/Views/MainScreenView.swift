@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MainScreenView: View {
-    @StateObject var viewModel: MainViewModel
+    @StateObject var viewModel: MainScreenViewModel
     let brightnessViewModel: BrightnessViewModel
     let textViewModel: TextViewModel
     let eyedropperViewModel: EyedropperViewModel

@@ -11,34 +11,38 @@ import SwiftUI
 final class BrightnessViewModel: ObservableObject {
     @Published var value: CGFloat = 0.5 {
         didSet {
-            UIScreen.main.brightness = value
+            screen.brightness = value
         }
     }
     
     // MARK: - Private
 
     private let lifecycleObserver: AppLifecycleObserver
-    private var savedSystemBrightness: CGFloat = UIScreen.main.brightness
+    private var screen: BrightnessControlling
+    private var savedSystemBrightness: CGFloat
     
     // MARK: - Init
 
     init(
         observer: AppLifecycleObserver = AppLifecycleObserver(
             notificationCenter: NotificationCenter.default
-        )
+        ),
+        screen: BrightnessControlling = UIScreen.main
     ) {
         self.lifecycleObserver = observer
-        self.value = UIScreen.main.brightness
+        self.screen = screen
+        self.value = screen.brightness
+        self.savedSystemBrightness = screen.brightness
 
         lifecycleObserver.observe(
             onForeground: { [weak self] in
                 guard let self else { return }
-                self.savedSystemBrightness = UIScreen.main.brightness
-                UIScreen.main.brightness = self.value
+                self.savedSystemBrightness = self.screen.brightness
+                self.screen.brightness = self.value
             },
             onBackground: { [weak self] in
                 guard let self else { return }
-                UIScreen.main.brightness = self.savedSystemBrightness
+                self.screen.brightness = self.savedSystemBrightness
             }
         )
     }
@@ -46,7 +50,7 @@ final class BrightnessViewModel: ObservableObject {
     deinit {
         Task { @MainActor [weak self] in
             guard let self else { return }
-            UIScreen.main.brightness = savedSystemBrightness
+            self.screen.brightness = savedSystemBrightness
         }
     }
 }

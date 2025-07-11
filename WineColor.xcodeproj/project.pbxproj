@@ -10,6 +10,8 @@
 		D25715D62E1FF24B0044AA0D /* AppLifecycleObserverProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25715D52E1FF24B0044AA0D /* AppLifecycleObserverProtocol.swift */; };
 		D25715E32E1FFA060044AA0D /* NotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25715E12E1FFA060044AA0D /* NotificationCenter.swift */; };
 		D25715E92E201B9A0044AA0D /* NotificationPublishing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25715E72E201B990044AA0D /* NotificationPublishing.swift */; };
+		D25715EF2E211FEB0044AA0D /* BrightnessControlling.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25715EE2E211FEB0044AA0D /* BrightnessControlling.swift */; };
+		D25715F12E21201B0044AA0D /* UIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25715F02E21201B0044AA0D /* UIScreen.swift */; };
 		D273C8992DEB59E300142DBF /* WineColorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C8972DEB59E300142DBF /* WineColorApp.swift */; };
 		D273C89D2DEB5D8B00142DBF /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C89C2DEB5D8B00142DBF /* AppEnvironment.swift */; };
 		D273C8AB2DEC945100142DBF /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C8AA2DEC945100142DBF /* String.swift */; };
@@ -48,6 +50,8 @@
 		D25715D52E1FF24B0044AA0D /* AppLifecycleObserverProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLifecycleObserverProtocol.swift; sourceTree = "<group>"; };
 		D25715E12E1FFA060044AA0D /* NotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenter.swift; sourceTree = "<group>"; };
 		D25715E72E201B990044AA0D /* NotificationPublishing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPublishing.swift; sourceTree = "<group>"; };
+		D25715EE2E211FEB0044AA0D /* BrightnessControlling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrightnessControlling.swift; sourceTree = "<group>"; };
+		D25715F02E21201B0044AA0D /* UIScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScreen.swift; sourceTree = "<group>"; };
 		D273C8972DEB59E300142DBF /* WineColorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineColorApp.swift; sourceTree = "<group>"; };
 		D273C89C2DEB5D8B00142DBF /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		D273C8AA2DEC945100142DBF /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -123,6 +127,15 @@
 			path = NotificationCenter;
 			sourceTree = "<group>";
 		};
+		D25715ED2E211FD40044AA0D /* UIScreen */ = {
+			isa = PBXGroup;
+			children = (
+				D25715EE2E211FEB0044AA0D /* BrightnessControlling.swift */,
+				D25715F02E21201B0044AA0D /* UIScreen.swift */,
+			);
+			path = UIScreen;
+			sourceTree = "<group>";
+		};
 		D273C8D52E16706400142DBF /* Auxiliaries */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +155,7 @@
 		D273C8DD2E16BAEE00142DBF /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				D25715ED2E211FD40044AA0D /* UIScreen */,
 				D25715DD2E1FF9540044AA0D /* NotificationCenter */,
 				D25715D42E1FF2260044AA0D /* AppLifecycleObserver */,
 				D2F34B5E2E1D7350005AF3B6 /* AppState.swift */,
@@ -448,6 +462,7 @@
 				D273C8B62E0309DC00142DBF /* ControlPanelView.swift in Sources */,
 				D273C8B42E0309BF00142DBF /* MainScreenView.swift in Sources */,
 				D273C8BA2E03247800142DBF /* AppLifecycleObserver.swift in Sources */,
+				D25715F12E21201B0044AA0D /* UIScreen.swift in Sources */,
 				D2F34B5F2E1D7350005AF3B6 /* AppState.swift in Sources */,
 				D273C8992DEB59E300142DBF /* WineColorApp.swift in Sources */,
 				D25715E92E201B9A0044AA0D /* NotificationPublishing.swift in Sources */,
@@ -455,6 +470,7 @@
 				D25715E32E1FFA060044AA0D /* NotificationCenter.swift in Sources */,
 				D273C89D2DEB5D8B00142DBF /* AppEnvironment.swift in Sources */,
 				D273C8B12E02ACD000142DBF /* MainScreenViewModel.swift in Sources */,
+				D25715EF2E211FEB0044AA0D /* BrightnessControlling.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

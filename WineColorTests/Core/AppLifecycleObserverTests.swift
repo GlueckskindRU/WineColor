@@ -29,7 +29,6 @@ final class AppLifecycleObserverTests: XCTestCase {
         mockCenter.post(name: Notification.Name(UIApplication.willEnterForegroundNotification.rawValue))
         mockCenter.post(name: Notification.Name(UIApplication.willResignActiveNotification.rawValue))
 
-
         wait(for: [foregroundCalled, backgroundCalled], timeout: 1.0)
     }
 }

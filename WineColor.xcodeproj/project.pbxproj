@@ -27,6 +27,7 @@
 		D273C8DB2E169E1D00142DBF /* LargeThumbSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C8DA2E169E1D00142DBF /* LargeThumbSlider.swift */; };
 		D28B5E912E16F82F00D21729 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = D28B5E902E16F82F00D21729 /* Localizable.xcstrings */; };
 		D28B5E932E17DFCC00D21729 /* L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28B5E922E17DFCC00D21729 /* L10n.swift */; };
+		D296FC592E21324A0068527C /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = D296FC582E21324A0068527C /* AppDependencies.swift */; };
 		D2F34B4D2E181A89005AF3B6 /* Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F34B4C2E181A89005AF3B6 /* Comparable.swift */; };
 		D2F34B502E1D237E005AF3B6 /* LargeThumbSlider+Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F34B4F2E1D237E005AF3B6 /* LargeThumbSlider+Config.swift */; };
 		D2F34B592E1D5FE3005AF3B6 /* BrightnessViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F34B582E1D5FE3005AF3B6 /* BrightnessViewModel.swift */; };
@@ -68,6 +69,7 @@
 		D273C8DA2E169E1D00142DBF /* LargeThumbSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeThumbSlider.swift; sourceTree = "<group>"; };
 		D28B5E902E16F82F00D21729 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = Localizable.xcstrings; path = Localization/Localizable.xcstrings; sourceTree = "<group>"; };
 		D28B5E922E17DFCC00D21729 /* L10n.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = L10n.swift; path = Localization/L10n.swift; sourceTree = "<group>"; };
+		D296FC582E21324A0068527C /* AppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
 		D2B399892DEB595F00389746 /* WineColor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WineColor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2F34B4C2E181A89005AF3B6 /* Comparable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comparable.swift; sourceTree = "<group>"; };
 		D2F34B4F2E1D237E005AF3B6 /* LargeThumbSlider+Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LargeThumbSlider+Config.swift"; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 			isa = PBXGroup;
 			children = (
 				D273C89C2DEB5D8B00142DBF /* AppEnvironment.swift */,
+				D296FC582E21324A0068527C /* AppDependencies.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -451,6 +454,7 @@
 				D273C8DB2E169E1D00142DBF /* LargeThumbSlider.swift in Sources */,
 				D2F34B5B2E1D5FFD005AF3B6 /* TextViewModel.swift in Sources */,
 				D273C8D42E157C4700142DBF /* AnalyticsEvent.swift in Sources */,
+				D296FC592E21324A0068527C /* AppDependencies.swift in Sources */,
 				D2F34B5D2E1D72FF005AF3B6 /* EyedropperViewModel.swift in Sources */,
 				D273C8AF2E02AC5A00142DBF /* ActiveMode.swift in Sources */,
 				D25715D62E1FF24B0044AA0D /* AppLifecycleObserverProtocol.swift in Sources */,

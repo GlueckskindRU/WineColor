@@ -30,7 +30,7 @@ final class MainScreenViewModel: ObservableObject {
     init(appState: AppState) {
         self.appState = appState
 
-        appState.text.$fontSize
+        appState.deps.text.$fontSize
             .receive(on: RunLoop.main)
             .sink { [weak self] newSize in
                 self?.objectWillChange.send()
@@ -49,7 +49,7 @@ final class MainScreenViewModel: ObservableObject {
     var font: Font {
         let base: CGFloat = 14
         let max: CGFloat = 40
-        let size = base + (max - base) * appState.text.fontSize
+        let size = base + (max - base) * appState.deps.text.fontSize
         return .system(size: size)
     }
 
@@ -73,18 +73,18 @@ final class MainScreenViewModel: ObservableObject {
         Binding {
             switch self.mode {
                 case .brightness:
-                    return self.appState.brightness.value
+                    return self.appState.deps.brightness.value
                 case .text:
-                    return self.appState.text.fontSize
+                    return self.appState.deps.text.fontSize
                 case .eyedropper:
                     return .zero
             }
         } set: { newValue in
             switch self.mode {
                 case .brightness:
-                    self.appState.brightness.value = newValue
+                    self.appState.deps.brightness.value = newValue
                 case .text:
-                    self.appState.text.fontSize = newValue
+                    self.appState.deps.text.fontSize = newValue
                 case .eyedropper:
                     break
             }

@@ -9,7 +9,19 @@ import SwiftUI
 
 @main
 struct WineColorApp: App {
-    @StateObject private var appState = AppState()
+    @StateObject private var appState = AppState(
+        context: AppState.Context(initialActiveMode: .brightness),
+        deps: AppState.Dependencies(
+            brightness: BrightnessViewModel(
+                deps: BrightnessViewModel.Dependencies(
+                    lifecycleObserver: AppDependencies.live.appLifecycleObserver,
+                    screen: AppDependencies.live.screen
+                )
+            ),
+            text: TextViewModel(),
+            eyedropper: EyedropperViewModel()
+        )
+    )
     
     init() {
         Analytics.log(AnalyticsEvent(name: "app_opened"))
@@ -19,9 +31,9 @@ struct WineColorApp: App {
         WindowGroup {
             MainScreenView(
                 viewModel: MainScreenViewModel(appState: appState),
-                brightnessViewModel: appState.brightness,
-                textViewModel: appState.text,
-                eyedropperViewModel: appState.eyedropper
+                brightnessViewModel: appState.deps.brightness,
+                textViewModel: appState.deps.text,
+                eyedropperViewModel: appState.deps.eyedropper
             )
         }
     }

@@ -7,23 +7,31 @@
 
 import SwiftUI
 
+// MARK: - Nested types
+
+extension AppState {
+    struct Context {
+        let initialActiveMode: ActiveMode
+    }
+    
+    struct Dependencies {
+        let brightness: BrightnessViewModel
+        let text: TextViewModel
+        let eyedropper: EyedropperViewModel
+    }
+}
+
+// MARK: - AppState
+
 @MainActor
 final class AppState: ObservableObject {
-    let brightness: BrightnessViewModel
-    let text: TextViewModel
-    let eyedropper: EyedropperViewModel
-
     @Published var activeMode: ActiveMode
-
-    init(
-        brightness: BrightnessViewModel = BrightnessViewModel(),
-        text: TextViewModel = TextViewModel(),
-        eyedropper: EyedropperViewModel = EyedropperViewModel(),
-        activeMode: ActiveMode = .brightness
-    ) {
-        self.brightness = brightness
-        self.text = text
-        self.eyedropper = eyedropper
-        self.activeMode = activeMode
+    private let context: Context
+    let deps: Dependencies
+    
+    init(context: Context, deps: Dependencies) {
+        self.context = context
+        self.deps = deps
+        activeMode = context.initialActiveMode
     }
 }

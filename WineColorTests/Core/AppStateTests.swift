@@ -13,19 +13,61 @@ import Combine
 final class AppStateTests: XCTestCase {
 
     func testInitialValues() {
-        let appState = AppState()
+        let appState = AppState(
+            context: AppState.Context(
+                initialActiveMode: .brightness
+            ),
+            deps: AppState.Dependencies(
+                brightness: BrightnessViewModel(
+                    deps: BrightnessViewModel.Dependencies(
+                        lifecycleObserver: AppLifecycleObserverMock(),
+                        screen: UIScreenMock()
+                    )
+                ),
+                text: TextViewModel(),
+                eyedropper: EyedropperViewModel()
+            )
+        )
 
         XCTAssertEqual(appState.activeMode, .brightness)
     }
 
     func testActiveModeCanBeChanged() {
-        let appState = AppState()
+        let appState = AppState(
+            context: AppState.Context(
+                initialActiveMode: .brightness
+            ),
+            deps: AppState.Dependencies(
+                brightness: BrightnessViewModel(
+                    deps: BrightnessViewModel.Dependencies(
+                        lifecycleObserver: AppLifecycleObserverMock(),
+                        screen: UIScreenMock()
+                    )
+                ),
+                text: TextViewModel(),
+                eyedropper: EyedropperViewModel()
+            )
+        )
         appState.activeMode = .text
         XCTAssertEqual(appState.activeMode, .text)
     }
 
     func testActiveModePublishesChanges() {
-        let appState = AppState()
+        let appState = AppState(
+            context: AppState.Context(
+                initialActiveMode: .brightness
+            ),
+            deps: AppState.Dependencies(
+                brightness: BrightnessViewModel(
+                    deps: BrightnessViewModel.Dependencies(
+                        lifecycleObserver: AppLifecycleObserverMock(),
+                        screen: UIScreenMock()
+                    )
+                ),
+                text: TextViewModel(),
+                eyedropper: EyedropperViewModel()
+            )
+        )
         var received: [ActiveMode] = []
         let expectation = XCTestExpectation(description: "Observed activeMode changes")
 

@@ -31,7 +31,7 @@ final class MainScreenViewModelTests: XCTestCase {
         let viewModel = MainScreenViewModel(appState: appState)
         XCTAssertEqual(viewModel.font, .system(size: TestData.minFontSize))
 
-        appState.text.fontSize = TestData.maxFontSizeCoefficient
+        appState.deps.text.fontSize = TestData.maxFontSizeCoefficient
         // принудительно уведомим об изменении
         viewModel.objectWillChange.send()
         XCTAssertEqual(viewModel.font, .system(size: TestData.maxFontSize))
@@ -43,7 +43,7 @@ final class MainScreenViewModelTests: XCTestCase {
 
         XCTAssertEqual(viewModel.font, .system(size: customFontSize(basedOn: 0.25)))
 
-        appState.text.fontSize = 0.75
+        appState.deps.text.fontSize = 0.75
         viewModel.objectWillChange.send()
         XCTAssertEqual(viewModel.font, .system(size: customFontSize(basedOn: 0.75)))
     }
@@ -57,10 +57,19 @@ private extension MainScreenViewModelTests {
         let textViewModel = TextViewModel()
         textViewModel.fontSize = fontSize
         return AppState(
-            brightness: BrightnessViewModel(),
-            text: textViewModel,
-            eyedropper: EyedropperViewModel(),
-            activeMode: mode
+            context: AppState.Context(
+                initialActiveMode: .brightness
+            ),
+            deps: AppState.Dependencies(
+                brightness: BrightnessViewModel(
+                    deps: BrightnessViewModel.Dependencies(
+                        lifecycleObserver: AppLifecycleObserverMock(),
+                        screen: UIScreenMock()
+                    )
+                ),
+                text: textViewModel,
+                eyedropper: EyedropperViewModel()
+            )
         )
     }
     

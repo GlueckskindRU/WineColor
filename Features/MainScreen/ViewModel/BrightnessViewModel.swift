@@ -7,42 +7,48 @@
 
 import SwiftUI
 
+// MARK: - Dependencies
+
+extension BrightnessViewModel {
+    struct Dependencies {
+        let lifecycleObserver: AppLifecycleObserverProtocol
+        var screen: BrightnessControlling
+    }
+}
+
+// MARK: - BrightnessViewModel
+
 @MainActor
 final class BrightnessViewModel: ObservableObject {
     @Published var value: CGFloat = 0.5 {
         didSet {
-            screen.brightness = value
+            deps.screen.brightness = value
         }
     }
     
     // MARK: - Private
 
-    private let lifecycleObserver: AppLifecycleObserver
-    private var screen: BrightnessControlling
+    private var deps: Dependencies
     private var savedSystemBrightness: CGFloat
     
     // MARK: - Init
 
     init(
-        observer: AppLifecycleObserver = AppLifecycleObserver(
-            notificationCenter: NotificationCenter.default
-        ),
-        screen: BrightnessControlling = UIScreen.main
+        deps: Dependencies
     ) {
-        self.lifecycleObserver = observer
-        self.screen = screen
-        self.value = screen.brightness
-        self.savedSystemBrightness = screen.brightness
+        self.deps = deps
+        self.value = deps.screen.brightness
+        self.savedSystemBrightness = deps.screen.brightness
 
-        lifecycleObserver.observe(
+        deps.lifecycleObserver.observe(
             onForeground: { [weak self] in
                 guard let self else { return }
-                self.savedSystemBrightness = self.screen.brightness
-                self.screen.brightness = self.value
+                self.savedSystemBrightness = self.deps.screen.brightness
+                self.deps.screen.brightness = self.value
             },
             onBackground: { [weak self] in
                 guard let self else { return }
-                self.screen.brightness = self.savedSystemBrightness
+                self.deps.screen.brightness = self.savedSystemBrightness
             }
         )
     }
@@ -50,7 +56,7 @@ final class BrightnessViewModel: ObservableObject {
     deinit {
         Task { @MainActor [weak self] in
             guard let self else { return }
-            self.screen.brightness = savedSystemBrightness
+            self.deps.screen.brightness = savedSystemBrightness
         }
     }
 }

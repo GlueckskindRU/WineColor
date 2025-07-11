@@ -22,7 +22,11 @@ final class BrightnessViewModel: ObservableObject {
     
     // MARK: - Init
 
-    init(observer: AppLifecycleObserver = AppLifecycleObserver()) {
+    init(
+        observer: AppLifecycleObserver = AppLifecycleObserver(
+            notificationCenter: NotificationCenter.default
+        )
+    ) {
         self.lifecycleObserver = observer
         self.value = UIScreen.main.brightness
 

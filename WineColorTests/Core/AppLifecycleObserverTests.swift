@@ -10,23 +10,26 @@ import XCTest
 
 @MainActor
 final class AppLifecycleObserverTests: XCTestCase {
-
     func testLifecycleObserverCallsHandlers() {
-        let nc = NotificationCenter()
-        let observer = AppLifecycleObserver(notificationCenter: nc)
+        let mockCenter = NotificationCenterMock()
+        let observer = AppLifecycleObserver(notificationCenter: mockCenter)
 
-        var didEnterBackground = false
-        var didEnterForeground = false
-
+        let foregroundCalled = XCTestExpectation(description: "Foreground called")
+        let backgroundCalled = XCTestExpectation(description: "Background called")
+        
         observer.observe(
-            onForeground: { didEnterForeground = true },
-            onBackground: { didEnterBackground = true }
+            onForeground: {
+                foregroundCalled.fulfill()
+            },
+            onBackground: {
+                backgroundCalled.fulfill()
+            }
         )
 
-        nc.post(name: UIApplication.willResignActiveNotification, object: nil)
-        nc.post(name: UIApplication.willEnterForegroundNotification, object: nil)
+        mockCenter.post(name: Notification.Name(UIApplication.willEnterForegroundNotification.rawValue))
+        mockCenter.post(name: Notification.Name(UIApplication.willResignActiveNotification.rawValue))
 
-        XCTAssertTrue(didEnterBackground)
-        XCTAssertTrue(didEnterForeground)
+
+        wait(for: [foregroundCalled, backgroundCalled], timeout: 1.0)
     }
 }

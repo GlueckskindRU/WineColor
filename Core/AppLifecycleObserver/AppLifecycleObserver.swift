@@ -5,38 +5,35 @@
 //  Created by Yuri Ivashin on 18.06.2025.
 //
 
-import UIKit
+import UIKit.UIApplication
 import Combine
 
 @MainActor
-final class AppLifecycleObserver {
+final class AppLifecycleObserver: AppLifecycleObserverProtocol {
     private var cancellables = Set<AnyCancellable>()
-    private let screen: UIScreen
-    private let notificationCenter: NotificationCenter
+    private let notificationCenter: NotificationPublishing
 
     private var onBackground: (() -> Void)?
     private var onForeground: (() -> Void)?
 
     init(
-        screen: UIScreen = .main,
-        notificationCenter: NotificationCenter = .default
+        notificationCenter: NotificationPublishing
     ) {
-        self.screen = screen
         self.notificationCenter = notificationCenter
     }
 
-    func observe(
+    public func observe(
         onForeground: @escaping () -> Void,
         onBackground: @escaping () -> Void
     ) {
         self.onForeground = onForeground
         self.onBackground = onBackground
 
-        notificationCenter.publisher(for: UIApplication.willEnterForegroundNotification)
+        notificationCenter.publisher(for: UIApplication.willEnterForegroundNotification, object: nil)
             .sink { [weak self] _ in self?.onForeground?() }
             .store(in: &cancellables)
 
-        notificationCenter.publisher(for: UIApplication.willResignActiveNotification)
+        notificationCenter.publisher(for: UIApplication.willResignActiveNotification, object: nil)
             .sink { [weak self] _ in self?.onBackground?() }
             .store(in: &cancellables)
     }

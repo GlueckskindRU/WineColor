@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D25715D62E1FF24B0044AA0D /* AppLifecycleObserverProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25715D52E1FF24B0044AA0D /* AppLifecycleObserverProtocol.swift */; };
+		D25715E32E1FFA060044AA0D /* NotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25715E12E1FFA060044AA0D /* NotificationCenter.swift */; };
+		D25715E92E201B9A0044AA0D /* NotificationPublishing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25715E72E201B990044AA0D /* NotificationPublishing.swift */; };
 		D273C8992DEB59E300142DBF /* WineColorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C8972DEB59E300142DBF /* WineColorApp.swift */; };
 		D273C89D2DEB5D8B00142DBF /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C89C2DEB5D8B00142DBF /* AppEnvironment.swift */; };
 		D273C8AB2DEC945100142DBF /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C8AA2DEC945100142DBF /* String.swift */; };
@@ -42,6 +45,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D25715D52E1FF24B0044AA0D /* AppLifecycleObserverProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLifecycleObserverProtocol.swift; sourceTree = "<group>"; };
+		D25715E12E1FFA060044AA0D /* NotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenter.swift; sourceTree = "<group>"; };
+		D25715E72E201B990044AA0D /* NotificationPublishing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPublishing.swift; sourceTree = "<group>"; };
 		D273C8972DEB59E300142DBF /* WineColorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineColorApp.swift; sourceTree = "<group>"; };
 		D273C89C2DEB5D8B00142DBF /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		D273C8AA2DEC945100142DBF /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -99,6 +105,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D25715D42E1FF2260044AA0D /* AppLifecycleObserver */ = {
+			isa = PBXGroup;
+			children = (
+				D273C8B92E03247800142DBF /* AppLifecycleObserver.swift */,
+				D25715D52E1FF24B0044AA0D /* AppLifecycleObserverProtocol.swift */,
+			);
+			path = AppLifecycleObserver;
+			sourceTree = "<group>";
+		};
+		D25715DD2E1FF9540044AA0D /* NotificationCenter */ = {
+			isa = PBXGroup;
+			children = (
+				D25715E72E201B990044AA0D /* NotificationPublishing.swift */,
+				D25715E12E1FFA060044AA0D /* NotificationCenter.swift */,
+			);
+			path = NotificationCenter;
+			sourceTree = "<group>";
+		};
 		D273C8D52E16706400142DBF /* Auxiliaries */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,7 +142,8 @@
 		D273C8DD2E16BAEE00142DBF /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				D273C8B92E03247800142DBF /* AppLifecycleObserver.swift */,
+				D25715DD2E1FF9540044AA0D /* NotificationCenter */,
+				D25715D42E1FF2260044AA0D /* AppLifecycleObserver */,
 				D2F34B5E2E1D7350005AF3B6 /* AppState.swift */,
 			);
 			path = Core;
@@ -414,6 +439,7 @@
 				D273C8D42E157C4700142DBF /* AnalyticsEvent.swift in Sources */,
 				D2F34B5D2E1D72FF005AF3B6 /* EyedropperViewModel.swift in Sources */,
 				D273C8AF2E02AC5A00142DBF /* ActiveMode.swift in Sources */,
+				D25715D62E1FF24B0044AA0D /* AppLifecycleObserverProtocol.swift in Sources */,
 				D2F34B592E1D5FE3005AF3B6 /* BrightnessViewModel.swift in Sources */,
 				D273C8D92E1672C000142DBF /* ActiveMode+Extension.swift in Sources */,
 				D28B5E932E17DFCC00D21729 /* L10n.swift in Sources */,
@@ -424,7 +450,9 @@
 				D273C8BA2E03247800142DBF /* AppLifecycleObserver.swift in Sources */,
 				D2F34B5F2E1D7350005AF3B6 /* AppState.swift in Sources */,
 				D273C8992DEB59E300142DBF /* WineColorApp.swift in Sources */,
+				D25715E92E201B9A0044AA0D /* NotificationPublishing.swift in Sources */,
 				D273C8AB2DEC945100142DBF /* String.swift in Sources */,
+				D25715E32E1FFA060044AA0D /* NotificationCenter.swift in Sources */,
 				D273C89D2DEB5D8B00142DBF /* AppEnvironment.swift in Sources */,
 				D273C8B12E02ACD000142DBF /* MainScreenViewModel.swift in Sources */,
 			);

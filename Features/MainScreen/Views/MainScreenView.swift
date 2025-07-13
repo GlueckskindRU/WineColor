@@ -18,7 +18,12 @@ struct MainScreenView: View {
             // Фон
             viewModel.backgroundColor
                 .ignoresSafeArea()
-            
+
+            // Камера
+            if viewModel.isEyedropperMode {
+                EyedropperView(viewModel: eyedropperViewModel)
+            }
+
             // Текст
             if viewModel.isTextMode {
                 Text(viewModel.placeholderText)
@@ -29,7 +34,7 @@ struct MainScreenView: View {
                     .padding(.bottom, 30)
             }
              // Нижняя панель управления
-             VStack(spacing: 12) {
+            VStack(spacing: 12) {
                  Spacer()
                  ControlPanelView(
                     activeMode: $viewModel.mode,
@@ -38,9 +43,9 @@ struct MainScreenView: View {
                     eyedropperViewModel: eyedropperViewModel
                  )
                  .background(.white)
-             }
-             .padding(.horizontal)
-             .padding(.bottom, 24)
+            }
+            .padding(.horizontal)
+            .padding(.bottom, 24)
         }
     }
 }

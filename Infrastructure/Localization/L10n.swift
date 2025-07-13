@@ -43,4 +43,34 @@ enum L10n {
             static let hint = String(localized: "slider.wine.hint")
         }
     }
+    
+    enum Button {
+        enum TorchSwitcher {
+            enum Off {
+                /// Switch the torch off
+                static let title = String(localized: "button.TorchSwitcher.off.title")
+            }
+            
+            enum On {
+                /// Switch the torch on
+                static let title = String(localized: "button.TorchSwitcher.on.title")
+            }
+        }
+        
+        enum RecognizeColor {
+            /// Recognize color
+            static let title = String(localized: "button.RecognizeColor.title")
+        }
+    }
+    
+    enum EyedropperView {
+        enum Alert {
+            /// Attention
+            static let title = String(localized: "eyedropperView.alert.title")
+            /// The accuracy of color detection may depend on the lighting and camera characteristics of the device.
+            static let text = String(localized: "eyedropperView.alert.text")
+            /// Got it
+            static let buttonTitle = String(localized: "eyedropperView.alert.buttonTitle")
+        }
+    }
 }

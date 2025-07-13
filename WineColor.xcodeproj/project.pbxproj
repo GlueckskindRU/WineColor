@@ -28,6 +28,14 @@
 		D28B5E912E16F82F00D21729 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = D28B5E902E16F82F00D21729 /* Localizable.xcstrings */; };
 		D28B5E932E17DFCC00D21729 /* L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28B5E922E17DFCC00D21729 /* L10n.swift */; };
 		D296FC592E21324A0068527C /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = D296FC582E21324A0068527C /* AppDependencies.swift */; };
+		D296FC5F2E21662C0068527C /* ControlPanelWithSlidingEnabledView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D296FC5E2E21662C0068527C /* ControlPanelWithSlidingEnabledView.swift */; };
+		D296FC612E21677E0068527C /* ControlPanelEyedropperModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D296FC602E21677E0068527C /* ControlPanelEyedropperModeView.swift */; };
+		D296FC652E23FF060068527C /* TorchControllingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D296FC642E23FF060068527C /* TorchControllingProtocol.swift */; };
+		D296FC672E23FF1F0068527C /* DefaultTorchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D296FC662E23FF1F0068527C /* DefaultTorchController.swift */; };
+		D296FC692E23FF5A0068527C /* EyedropperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D296FC682E23FF5A0068527C /* EyedropperView.swift */; };
+		D296FC702E2403870068527C /* CameraSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = D296FC6F2E2403870068527C /* CameraSession.swift */; };
+		D296FC722E2404EE0068527C /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D296FC712E2404EE0068527C /* PreviewView.swift */; };
+		D296FC742E2405170068527C /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D296FC732E2405170068527C /* CameraPreviewView.swift */; };
 		D2F34B4D2E181A89005AF3B6 /* Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F34B4C2E181A89005AF3B6 /* Comparable.swift */; };
 		D2F34B502E1D237E005AF3B6 /* LargeThumbSlider+Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F34B4F2E1D237E005AF3B6 /* LargeThumbSlider+Config.swift */; };
 		D2F34B592E1D5FE3005AF3B6 /* BrightnessViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F34B582E1D5FE3005AF3B6 /* BrightnessViewModel.swift */; };
@@ -70,6 +78,14 @@
 		D28B5E902E16F82F00D21729 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = Localizable.xcstrings; path = Localization/Localizable.xcstrings; sourceTree = "<group>"; };
 		D28B5E922E17DFCC00D21729 /* L10n.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = L10n.swift; path = Localization/L10n.swift; sourceTree = "<group>"; };
 		D296FC582E21324A0068527C /* AppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
+		D296FC5E2E21662C0068527C /* ControlPanelWithSlidingEnabledView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlPanelWithSlidingEnabledView.swift; sourceTree = "<group>"; };
+		D296FC602E21677E0068527C /* ControlPanelEyedropperModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlPanelEyedropperModeView.swift; sourceTree = "<group>"; };
+		D296FC642E23FF060068527C /* TorchControllingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorchControllingProtocol.swift; sourceTree = "<group>"; };
+		D296FC662E23FF1F0068527C /* DefaultTorchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTorchController.swift; sourceTree = "<group>"; };
+		D296FC682E23FF5A0068527C /* EyedropperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyedropperView.swift; sourceTree = "<group>"; };
+		D296FC6F2E2403870068527C /* CameraSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraSession.swift; sourceTree = "<group>"; };
+		D296FC712E2404EE0068527C /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
+		D296FC732E2405170068527C /* CameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
 		D2B399892DEB595F00389746 /* WineColor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WineColor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2F34B4C2E181A89005AF3B6 /* Comparable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comparable.swift; sourceTree = "<group>"; };
 		D2F34B4F2E1D237E005AF3B6 /* LargeThumbSlider+Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LargeThumbSlider+Config.swift"; sourceTree = "<group>"; };
@@ -80,6 +96,16 @@
 		D2F34B602E1D7F70005AF3B6 /* ControlButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		D2F624B12E24191300308A16 /* Exceptions for "WineColor" folder in "WineColor" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = D2B399882DEB595F00389746 /* WineColor */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		D273C8C02E03291100142DBF /* WineColorTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
@@ -88,6 +114,9 @@
 		};
 		D2B3998B2DEB595F00389746 /* WineColor */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				D2F624B12E24191300308A16 /* Exceptions for "WineColor" folder in "WineColor" target */,
+			);
 			path = WineColor;
 			sourceTree = "<group>";
 		};
@@ -187,6 +216,7 @@
 		D273C8E02E16C57000142DBF /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				D296FC6A2E23FFC40068527C /* Eyedropper */,
 				D273C8D52E16706400142DBF /* Auxiliaries */,
 				D273C8E12E16C57800142DBF /* MainScreen */,
 			);
@@ -217,7 +247,6 @@
 				D273C8B02E02ACD000142DBF /* MainScreenViewModel.swift */,
 				D2F34B582E1D5FE3005AF3B6 /* BrightnessViewModel.swift */,
 				D2F34B5A2E1D5FFD005AF3B6 /* TextViewModel.swift */,
-				D2F34B5C2E1D72FF005AF3B6 /* EyedropperViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -238,12 +267,66 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		D296FC632E23FEC30068527C /* Torch */ = {
+			isa = PBXGroup;
+			children = (
+				D296FC642E23FF060068527C /* TorchControllingProtocol.swift */,
+				D296FC662E23FF1F0068527C /* DefaultTorchController.swift */,
+			);
+			path = Torch;
+			sourceTree = "<group>";
+		};
+		D296FC6A2E23FFC40068527C /* Eyedropper */ = {
+			isa = PBXGroup;
+			children = (
+				D296FC6D2E24034B0068527C /* Components */,
+				D296FC6C2E23FFDF0068527C /* ViewModel */,
+				D296FC6B2E23FFD70068527C /* Views */,
+			);
+			path = Eyedropper;
+			sourceTree = "<group>";
+		};
+		D296FC6B2E23FFD70068527C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D296FC682E23FF5A0068527C /* EyedropperView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D296FC6C2E23FFDF0068527C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D2F34B5C2E1D72FF005AF3B6 /* EyedropperViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D296FC6D2E24034B0068527C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D296FC712E2404EE0068527C /* PreviewView.swift */,
+				D296FC732E2405170068527C /* CameraPreviewView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		D296FC6E2E24037D0068527C /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				D296FC6F2E2403870068527C /* CameraSession.swift */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
 		D29E067F2E16CA670037AB78 /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				D2F34B4E2E1D235F005AF3B6 /* LargeThumbSlider */,
 				D273C8B52E0309DC00142DBF /* ControlPanelView.swift */,
+				D296FC602E21677E0068527C /* ControlPanelEyedropperModeView.swift */,
 				D2F34B602E1D7F70005AF3B6 /* ControlButtonView.swift */,
+				D296FC5E2E21662C0068527C /* ControlPanelWithSlidingEnabledView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -251,6 +334,8 @@
 		D29E06842E16CD030037AB78 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				D296FC6E2E24037D0068527C /* Camera */,
+				D296FC632E23FEC30068527C /* Torch */,
 				D273C8DC2E16BABF00142DBF /* App */,
 				D2B399992DEB599300389746 /* Configuration */,
 				D273C8DE2E16C55C00142DBF /* Analytics */,
@@ -457,23 +542,31 @@
 				D296FC592E21324A0068527C /* AppDependencies.swift in Sources */,
 				D2F34B5D2E1D72FF005AF3B6 /* EyedropperViewModel.swift in Sources */,
 				D273C8AF2E02AC5A00142DBF /* ActiveMode.swift in Sources */,
+				D296FC692E23FF5A0068527C /* EyedropperView.swift in Sources */,
 				D25715D62E1FF24B0044AA0D /* AppLifecycleObserverProtocol.swift in Sources */,
+				D296FC652E23FF060068527C /* TorchControllingProtocol.swift in Sources */,
 				D2F34B592E1D5FE3005AF3B6 /* BrightnessViewModel.swift in Sources */,
 				D273C8D92E1672C000142DBF /* ActiveMode+Extension.swift in Sources */,
 				D28B5E932E17DFCC00D21729 /* L10n.swift in Sources */,
 				D2F34B612E1D7F70005AF3B6 /* ControlButtonView.swift in Sources */,
+				D296FC672E23FF1F0068527C /* DefaultTorchController.swift in Sources */,
+				D296FC742E2405170068527C /* CameraPreviewView.swift in Sources */,
 				D2F34B502E1D237E005AF3B6 /* LargeThumbSlider+Config.swift in Sources */,
 				D273C8B62E0309DC00142DBF /* ControlPanelView.swift in Sources */,
+				D296FC702E2403870068527C /* CameraSession.swift in Sources */,
 				D273C8B42E0309BF00142DBF /* MainScreenView.swift in Sources */,
 				D273C8BA2E03247800142DBF /* AppLifecycleObserver.swift in Sources */,
 				D25715F12E21201B0044AA0D /* UIScreen.swift in Sources */,
 				D2F34B5F2E1D7350005AF3B6 /* AppState.swift in Sources */,
+				D296FC5F2E21662C0068527C /* ControlPanelWithSlidingEnabledView.swift in Sources */,
 				D273C8992DEB59E300142DBF /* WineColorApp.swift in Sources */,
 				D25715E92E201B9A0044AA0D /* NotificationPublishing.swift in Sources */,
 				D273C8AB2DEC945100142DBF /* String.swift in Sources */,
 				D25715E32E1FFA060044AA0D /* NotificationCenter.swift in Sources */,
+				D296FC722E2404EE0068527C /* PreviewView.swift in Sources */,
 				D273C89D2DEB5D8B00142DBF /* AppEnvironment.swift in Sources */,
 				D273C8B12E02ACD000142DBF /* MainScreenViewModel.swift in Sources */,
+				D296FC612E21677E0068527C /* ControlPanelEyedropperModeView.swift in Sources */,
 				D25715EF2E211FEB0044AA0D /* BrightnessControlling.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -658,6 +751,7 @@
 				DEVELOPMENT_TEAM = 3BEPD83256;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_FILE[sdk=*]" = WineColor/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -689,6 +783,7 @@
 				DEVELOPMENT_TEAM = 3BEPD83256;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_FILE[sdk=*]" = WineColor/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

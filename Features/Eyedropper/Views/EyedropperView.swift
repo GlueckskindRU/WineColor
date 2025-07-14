@@ -24,9 +24,13 @@ struct EyedropperView: View {
                 Spacer(minLength: 0)
             }
             .overlay(
-                Rectangle()
-                    .stroke(Color.white, lineWidth: 3)
-                    .frame(width: 100, height: 100)
+                Group {
+                    if !viewModel.needToShowDisclaimer {
+                        Rectangle()
+                            .stroke(Color.white, lineWidth: 3)
+                            .frame(width: 100, height: 100)
+                    }
+                }
             )
 
             // Добавим отступ вручную под панель

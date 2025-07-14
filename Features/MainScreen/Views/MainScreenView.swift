@@ -30,7 +30,7 @@ struct MainScreenView: View {
                     .font(viewModel.font)
                     .foregroundColor(.black.opacity(0.8))
                     .padding()
-                    .multilineTextAlignment(.center)
+                    .multilineTextAlignment(.leading)
                     .padding(.bottom, 30)
             }
              // Нижняя панель управления

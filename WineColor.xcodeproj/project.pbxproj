@@ -43,6 +43,7 @@
 		D2F34B5D2E1D72FF005AF3B6 /* EyedropperViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F34B5C2E1D72FF005AF3B6 /* EyedropperViewModel.swift */; };
 		D2F34B5F2E1D7350005AF3B6 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F34B5E2E1D7350005AF3B6 /* AppState.swift */; };
 		D2F34B612E1D7F70005AF3B6 /* ControlButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F34B602E1D7F70005AF3B6 /* ControlButtonView.swift */; };
+		D2F624B62E2672FD00308A16 /* ColorExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F624B52E2672FD00308A16 /* ColorExtractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,7 @@
 		D2F34B5C2E1D72FF005AF3B6 /* EyedropperViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyedropperViewModel.swift; sourceTree = "<group>"; };
 		D2F34B5E2E1D7350005AF3B6 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		D2F34B602E1D7F70005AF3B6 /* ControlButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlButtonView.swift; sourceTree = "<group>"; };
+		D2F624B52E2672FD00308A16 /* ColorExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -315,6 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				D296FC6F2E2403870068527C /* CameraSession.swift */,
+				D2F624B52E2672FD00308A16 /* ColorExtractor.swift */,
 			);
 			path = Camera;
 			sourceTree = "<group>";
@@ -567,6 +570,7 @@
 				D273C89D2DEB5D8B00142DBF /* AppEnvironment.swift in Sources */,
 				D273C8B12E02ACD000142DBF /* MainScreenViewModel.swift in Sources */,
 				D296FC612E21677E0068527C /* ControlPanelEyedropperModeView.swift in Sources */,
+				D2F624B62E2672FD00308A16 /* ColorExtractor.swift in Sources */,
 				D25715EF2E211FEB0044AA0D /* BrightnessControlling.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

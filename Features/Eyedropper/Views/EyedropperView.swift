@@ -28,7 +28,7 @@ struct EyedropperView: View {
                     if !viewModel.needToShowDisclaimer {
                         Rectangle()
                             .stroke(Color.white, lineWidth: 3)
-                            .frame(width: 100, height: 100)
+                            .frame(width: 75, height: 75)
                     }
                 }
             )

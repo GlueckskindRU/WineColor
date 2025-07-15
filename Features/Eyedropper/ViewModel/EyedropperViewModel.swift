@@ -13,7 +13,7 @@ final class EyedropperViewModel: ObservableObject {
 
     @Published var isTorchOn: Bool = false
     @Published var needToShowDisclaimer: Bool = true
-    @Published var capturedColor: UIColor? = nil
+    @Published var capturedColor: Color? = nil
 
     private let torchController: TorchControllingProtocol
 
@@ -29,8 +29,11 @@ final class EyedropperViewModel: ObservableObject {
     }
 
     func captureColor() {
-        print("🔍 Обработка захвата цвета — заглушка")
-        // capturedColor = ...
+        CameraSession.shared.captureColor { [weak self] color in
+            Task { @MainActor in
+                self?.capturedColor = color
+            }
+        }
     }
 
     func hideDisclaimer() {

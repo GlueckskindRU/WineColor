@@ -13,8 +13,7 @@ struct ControlPanelEyedropperModeView: View {
     var body: some View {
         HStack(spacing: 12) {
             Button(action: {
-                print("💡 Переключение вспышки")
-                // eyedropperViewModel.toggleTorch() в будущем
+                eyedropperViewModel.toggleTorch()
             }) {
                 VStack(spacing: 4) {
                     Image(systemName: eyedropperViewModel.isTorchOn ? "bolt.fill" : "bolt.slash.fill")
@@ -31,8 +30,7 @@ struct ControlPanelEyedropperModeView: View {
             }
             
             Button(action: {
-                print("🔍 Запрос на определение цвета")
-                // eyedropperViewModel.captureColor() в будущем
+                eyedropperViewModel.captureColor()
             }) {
                 VStack(spacing: 4) {
                     Image(systemName: "scope")

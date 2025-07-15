@@ -9,23 +9,35 @@ import SwiftUI
 
 struct EyedropperView: View {
     @ObservedObject var viewModel: EyedropperViewModel
-    @State private var controlPanelHeight: CGFloat = 0
 
     var body: some View {
         VStack(spacing: 0) {
             // Камера + перекрестие
             VStack(spacing: 8) {
-                CameraPreviewView()
-                    .cornerRadius(12)
-                    .padding(.horizontal, 16)
-                    .padding(.top, 16)
-                    .shadow(radius: 5)
+                if let capturedColor = viewModel.capturedColor {
+                    // Заливка цветом, если цвет получен
+                    capturedColor
+                        .cornerRadius(12)
+                        .padding(.horizontal, 16)
+                        .padding(.top, 16)
+                        .shadow(radius: 5)
+                } else {
+                    // Камера
+                    CameraPreviewView()
+                        .cornerRadius(12)
+                        .padding(.horizontal, 16)
+                        .padding(.top, 16)
+                        .shadow(radius: 5)
+                }
 
                 Spacer(minLength: 0)
             }
             .overlay(
                 Group {
-                    if !viewModel.needToShowDisclaimer {
+                    if
+                        !viewModel.needToShowDisclaimer,
+                        viewModel.capturedColor == nil
+                    {
                         Rectangle()
                             .stroke(Color.white, lineWidth: 3)
                             .frame(width: 75, height: 75)

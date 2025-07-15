@@ -65,6 +65,23 @@
         }
       }
     },
+    "button.ResetColor.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reset"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сбросить"
+          }
+        }
+      }
+    },
     "button.TorchSwitcher.off.title" : {
       "extractionState" : "manual",
       "localizations" : {

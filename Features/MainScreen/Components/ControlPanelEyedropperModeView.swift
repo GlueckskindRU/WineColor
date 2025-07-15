@@ -29,18 +29,34 @@ struct ControlPanelEyedropperModeView: View {
                 .frame(maxWidth: .infinity)
             }
             
-            Button(action: {
-                eyedropperViewModel.captureColor()
-            }) {
-                VStack(spacing: 4) {
-                    Image(systemName: "scope")
-                        .font(.system(size: 24, weight: .regular))
-                    Text(L10n.Button.RecognizeColor.title)
-                        .font(.footnote)
+            if eyedropperViewModel.capturedColor == nil {
+                Button(action: {
+                    eyedropperViewModel.captureColor()
+                }) {
+                    VStack(spacing: 4) {
+                        Image(systemName: "scope")
+                            .font(.system(size: 24, weight: .regular))
+                        Text(L10n.Button.RecognizeColor.title)
+                            .font(.footnote)
+                    }
+                    .foregroundColor(.primary)
+                    .padding()
+                    .frame(maxWidth: .infinity)
                 }
-                .foregroundColor(.primary)
-                .padding()
-                .frame(maxWidth: .infinity)
+            } else {
+                Button(action: {
+                    eyedropperViewModel.resetCapturedColor()
+                }) {
+                    VStack(spacing: 4) {
+                        Image(systemName: "arrow.counterclockwise")
+                            .font(.system(size: 24, weight: .regular))
+                        Text(L10n.Button.ResetColor.title)
+                            .font(.footnote)
+                    }
+                    .foregroundColor(.primary)
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                }
             }
         }
         .padding()

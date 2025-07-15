@@ -61,6 +61,11 @@ enum L10n {
             /// Recognize color
             static let title = String(localized: "button.RecognizeColor.title")
         }
+        
+        enum ResetColor {
+            /// Reset
+            static let title = String(localized: "button.ResetColor.title")
+        }
     }
     
     enum EyedropperView {

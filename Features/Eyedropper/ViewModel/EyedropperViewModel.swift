@@ -35,6 +35,10 @@ final class EyedropperViewModel: ObservableObject {
             }
         }
     }
+    
+    func resetCapturedColor() {
+        capturedColor = nil
+    }
 
     func hideDisclaimer() {
         needToShowDisclaimer = false

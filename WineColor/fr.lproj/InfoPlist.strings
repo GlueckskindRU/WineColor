@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  WineColor
+
+  Created by Yuri Ivashin on 16.07.2025.
+  
+*/
+
+NSCameraUsageDescription = "Pour identifier la couleur du vin dans un verre";

@@ -7,4 +7,5 @@
 
 import UIKit.UIScreen
 
+@MainActor
 extension UIScreen: BrightnessControlling {}

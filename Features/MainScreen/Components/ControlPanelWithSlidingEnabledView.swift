@@ -16,8 +16,7 @@ struct ControlPanelWithSlidingEnabledView: View {
     var body: some View {
         HStack(spacing: 12) {
             Label(activeMode.hint, systemImage: activeMode.iconSelected)
-                .font(.headline)
-                .fontWeight(.bold)
+                .font(.headline.bold())
             Spacer()
             if activeMode.isText {
                 LargeThumbSlider(

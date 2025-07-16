@@ -10,6 +10,7 @@ import SwiftUI
 struct LargeThumbSlider: View {
     @Binding var value: CGFloat
     let config: Config
+    let hapticImpactGenerator: HapticImpactGeneratorProtocol
 
     var body: some View {
         GeometryReader { geometry in
@@ -38,6 +39,9 @@ struct LargeThumbSlider: View {
                                 let newLocation = gesture.location.x
                                 let percent = (newLocation / width).clamped(to: 0...1)
                                 value = percent * (config.range.upperBound - config.range.lowerBound) + config.range.lowerBound
+                            }
+                            .onEnded { _ in
+                                hapticImpactGenerator.occurs(.light)
                             }
                     )
             }

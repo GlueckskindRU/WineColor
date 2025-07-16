@@ -7,6 +7,7 @@
 
 import Foundation
 
-protocol TorchControllingProtocol {
+public protocol TorchControllingProtocol {
     func setTorch(_ on: Bool)
+    func isTorchActuallyOn() -> Bool
 }

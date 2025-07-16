@@ -11,6 +11,7 @@ struct ControlPanelWithSlidingEnabledView: View {
     @Binding var activeMode: ActiveMode
     @ObservedObject var brightnessViewModel: BrightnessViewModel
     @ObservedObject var textViewModel: TextViewModel
+    let hapticImpactGenerator: HapticImpactGeneratorProtocol
     
     var body: some View {
         HStack(spacing: 12) {
@@ -19,13 +20,21 @@ struct ControlPanelWithSlidingEnabledView: View {
                 .fontWeight(.bold)
             Spacer()
             if activeMode.isText {
-                LargeThumbSlider(value: $textViewModel.fontSize, config: .large)
-                    .frame(height: 44)
-                    .padding(.horizontal)
+                LargeThumbSlider(
+                    value: $textViewModel.fontSize,
+                    config: .large,
+                    hapticImpactGenerator: hapticImpactGenerator
+                )
+                .frame(height: 44)
+                .padding(.horizontal)
             } else if activeMode.isBrightness {
-                LargeThumbSlider(value: $brightnessViewModel.value, config: .large)
-                    .frame(height: 44)
-                    .padding(.horizontal)
+                LargeThumbSlider(
+                    value: $brightnessViewModel.value,
+                    config: .large,
+                    hapticImpactGenerator: hapticImpactGenerator
+                )
+                .frame(height: 44)
+                .padding(.horizontal)
             }
         }
         .padding()

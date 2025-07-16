@@ -19,7 +19,10 @@ struct WineColorApp: App {
                 )
             ),
             text: TextViewModel(),
-            eyedropper: EyedropperViewModel()
+            eyedropper: EyedropperViewModel(
+                torchController: AppDependencies.live.torchController,
+                hapticImpactGenerator: AppDependencies.live.hapticImpactGenerator
+            )
         )
     )
     
@@ -33,7 +36,8 @@ struct WineColorApp: App {
                 viewModel: MainScreenViewModel(appState: appState),
                 brightnessViewModel: appState.deps.brightness,
                 textViewModel: appState.deps.text,
-                eyedropperViewModel: appState.deps.eyedropper
+                eyedropperViewModel: appState.deps.eyedropper,
+                hapticImpactGenerator: AppDependencies.live.hapticImpactGenerator
             )
         }
     }

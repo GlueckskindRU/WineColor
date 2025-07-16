@@ -44,6 +44,9 @@
 		D2F34B5F2E1D7350005AF3B6 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F34B5E2E1D7350005AF3B6 /* AppState.swift */; };
 		D2F34B612E1D7F70005AF3B6 /* ControlButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F34B602E1D7F70005AF3B6 /* ControlButtonView.swift */; };
 		D2F624B62E2672FD00308A16 /* ColorExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F624B52E2672FD00308A16 /* ColorExtractor.swift */; };
+		D2F624B92E27B25600308A16 /* HapticImpact.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F624B82E27B25600308A16 /* HapticImpact.swift */; };
+		D2F624BB2E27B2BE00308A16 /* HapticImpactGeneratorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F624BA2E27B2BE00308A16 /* HapticImpactGeneratorProtocol.swift */; };
+		D2F624BD2E27B31600308A16 /* HapticImpactGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F624BC2E27B31600308A16 /* HapticImpactGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +99,9 @@
 		D2F34B5E2E1D7350005AF3B6 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		D2F34B602E1D7F70005AF3B6 /* ControlButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlButtonView.swift; sourceTree = "<group>"; };
 		D2F624B52E2672FD00308A16 /* ColorExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtractor.swift; sourceTree = "<group>"; };
+		D2F624B82E27B25600308A16 /* HapticImpact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticImpact.swift; sourceTree = "<group>"; };
+		D2F624BA2E27B2BE00308A16 /* HapticImpactGeneratorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticImpactGeneratorProtocol.swift; sourceTree = "<group>"; };
+		D2F624BC2E27B31600308A16 /* HapticImpactGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticImpactGenerator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -337,6 +343,7 @@
 		D29E06842E16CD030037AB78 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				D2F624B72E27B22400308A16 /* Haptic */,
 				D296FC6E2E24037D0068527C /* Camera */,
 				D296FC632E23FEC30068527C /* Torch */,
 				D273C8DC2E16BABF00142DBF /* App */,
@@ -387,6 +394,16 @@
 				D2F34B4F2E1D237E005AF3B6 /* LargeThumbSlider+Config.swift */,
 			);
 			path = LargeThumbSlider;
+			sourceTree = "<group>";
+		};
+		D2F624B72E27B22400308A16 /* Haptic */ = {
+			isa = PBXGroup;
+			children = (
+				D2F624B82E27B25600308A16 /* HapticImpact.swift */,
+				D2F624BA2E27B2BE00308A16 /* HapticImpactGeneratorProtocol.swift */,
+				D2F624BC2E27B31600308A16 /* HapticImpactGenerator.swift */,
+			);
+			path = Haptic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -552,6 +569,8 @@
 				D273C8D92E1672C000142DBF /* ActiveMode+Extension.swift in Sources */,
 				D28B5E932E17DFCC00D21729 /* L10n.swift in Sources */,
 				D2F34B612E1D7F70005AF3B6 /* ControlButtonView.swift in Sources */,
+				D2F624BB2E27B2BE00308A16 /* HapticImpactGeneratorProtocol.swift in Sources */,
+				D2F624BD2E27B31600308A16 /* HapticImpactGenerator.swift in Sources */,
 				D296FC672E23FF1F0068527C /* DefaultTorchController.swift in Sources */,
 				D296FC742E2405170068527C /* CameraPreviewView.swift in Sources */,
 				D2F34B502E1D237E005AF3B6 /* LargeThumbSlider+Config.swift in Sources */,
@@ -565,6 +584,7 @@
 				D273C8992DEB59E300142DBF /* WineColorApp.swift in Sources */,
 				D25715E92E201B9A0044AA0D /* NotificationPublishing.swift in Sources */,
 				D273C8AB2DEC945100142DBF /* String.swift in Sources */,
+				D2F624B92E27B25600308A16 /* HapticImpact.swift in Sources */,
 				D25715E32E1FFA060044AA0D /* NotificationCenter.swift in Sources */,
 				D296FC722E2404EE0068527C /* PreviewView.swift in Sources */,
 				D273C89D2DEB5D8B00142DBF /* AppEnvironment.swift in Sources */,

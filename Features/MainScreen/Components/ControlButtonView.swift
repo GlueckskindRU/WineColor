@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ControlButtonView: View {
     let mode: ActiveMode
+    let hapticImpactGenerator: HapticImpactGeneratorProtocol
     @Binding var selectedMode: ActiveMode
 
     private var isSelected: Bool {
@@ -17,6 +18,7 @@ struct ControlButtonView: View {
 
     var body: some View {
         Button(action: {
+            hapticImpactGenerator.occurs(.light)
             selectedMode = mode
         }) {
             VStack(spacing: 4) {

@@ -9,12 +9,17 @@ import Foundation
 import AVFoundation
 
 struct DefaultTorchController: TorchControllingProtocol {
-    func setTorch(_ on: Bool) {
+    public func setTorch(_ on: Bool) {
         guard let device = AVCaptureDevice.default(for: .video),
               device.hasTorch else { return }
 
         try? device.lockForConfiguration()
         device.torchMode = on ? .on : .off
         device.unlockForConfiguration()
+    }
+    
+    public func isTorchActuallyOn() -> Bool {
+        guard let device = AVCaptureDevice.default(for: .video) else { return false }
+        return device.isTorchActive
     }
 }

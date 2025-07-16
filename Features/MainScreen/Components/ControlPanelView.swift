@@ -12,6 +12,7 @@ struct ControlPanelView: View {
     @ObservedObject var brightnessViewModel: BrightnessViewModel
     @ObservedObject var textViewModel: TextViewModel
     @ObservedObject var eyedropperViewModel: EyedropperViewModel
+    let hapticImpactGenerator: HapticImpactGeneratorProtocol
 
     var body: some View {
         VStack(spacing: 20) {
@@ -20,7 +21,8 @@ struct ControlPanelView: View {
                     ControlPanelWithSlidingEnabledView(
                         activeMode: $activeMode,
                         brightnessViewModel: brightnessViewModel,
-                        textViewModel: textViewModel
+                        textViewModel: textViewModel,
+                        hapticImpactGenerator: hapticImpactGenerator
                     )
                 case .eyedropper:
                     ControlPanelEyedropperModeView(
@@ -29,7 +31,11 @@ struct ControlPanelView: View {
             }
             HStack {
                 ForEach(ActiveMode.allCases, id: \.self) { mode in
-                    ControlButtonView(mode: mode, selectedMode: $activeMode)
+                    ControlButtonView(
+                        mode: mode,
+                        hapticImpactGenerator: hapticImpactGenerator,
+                        selectedMode: $activeMode
+                    )
                 }
             }
             .padding(.top, 4)

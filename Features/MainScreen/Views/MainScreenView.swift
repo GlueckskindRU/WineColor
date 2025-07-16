@@ -12,6 +12,7 @@ struct MainScreenView: View {
     let brightnessViewModel: BrightnessViewModel
     let textViewModel: TextViewModel
     let eyedropperViewModel: EyedropperViewModel
+    let hapticImpactGenerator: HapticImpactGeneratorProtocol
     
     var body: some View {
         ZStack {
@@ -40,7 +41,8 @@ struct MainScreenView: View {
                     activeMode: $viewModel.mode,
                     brightnessViewModel: brightnessViewModel,
                     textViewModel: textViewModel,
-                    eyedropperViewModel: eyedropperViewModel
+                    eyedropperViewModel: eyedropperViewModel,
+                    hapticImpactGenerator: hapticImpactGenerator
                  )
                  .background(.white)
             }

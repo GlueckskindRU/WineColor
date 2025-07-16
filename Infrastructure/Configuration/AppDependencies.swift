@@ -14,15 +14,21 @@ public struct AppDependencies {
     let appLifecycleObserver: AppLifecycleObserverProtocol
     let screen: BrightnessControlling
     let notifications: NotificationPublishing
+    let torchController: TorchControllingProtocol
+    let hapticImpactGenerator: HapticImpactGeneratorProtocol
     
     public init(
         appLifecycleObserver: AppLifecycleObserverProtocol,
         screen: BrightnessControlling,
-        notifications: NotificationPublishing
+        notifications: NotificationPublishing,
+        torchController: TorchControllingProtocol,
+        hapticImpactGenerator: HapticImpactGeneratorProtocol
     ) {
         self.appLifecycleObserver = appLifecycleObserver
         self.screen = screen
         self.notifications = notifications
+        self.torchController = torchController
+        self.hapticImpactGenerator = hapticImpactGenerator
     }
 }
 
@@ -35,6 +41,8 @@ extension AppDependencies {
             notificationCenter: NotificationCenter.default
         ),
         screen: UIScreen.main,
-        notifications: NotificationCenter.default
+        notifications: NotificationCenter.default,
+        torchController: DefaultTorchController(),
+        hapticImpactGenerator: HapticImpactGenerator()
     )
 }

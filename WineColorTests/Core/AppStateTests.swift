@@ -25,7 +25,10 @@ final class AppStateTests: XCTestCase {
                     )
                 ),
                 text: TextViewModel(),
-                eyedropper: EyedropperViewModel()
+                eyedropper: EyedropperViewModel(
+                    torchController: TorchControllerMock(),
+                    hapticImpactGenerator: HapticImpactGeneratorMock()
+                )
             )
         )
 
@@ -45,7 +48,10 @@ final class AppStateTests: XCTestCase {
                     )
                 ),
                 text: TextViewModel(),
-                eyedropper: EyedropperViewModel()
+                eyedropper: EyedropperViewModel(
+                    torchController: TorchControllerMock(),
+                    hapticImpactGenerator: HapticImpactGeneratorMock()
+                )
             )
         )
         appState.activeMode = .text
@@ -65,7 +71,10 @@ final class AppStateTests: XCTestCase {
                     )
                 ),
                 text: TextViewModel(),
-                eyedropper: EyedropperViewModel()
+                eyedropper: EyedropperViewModel(
+                    torchController: TorchControllerMock(),
+                    hapticImpactGenerator: HapticImpactGeneratorMock()
+                )
             )
         )
         var received: [ActiveMode] = []

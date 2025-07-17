@@ -46,11 +46,14 @@ final class MainScreenViewModel: ObservableObject {
 
     // MARK: - Text
 
-    var font: Font {
+    var fontSize: CGFloat {
         let base: CGFloat = 14
         let max: CGFloat = 40
-        let size = base + (max - base) * appState.deps.text.fontSize
-        return .system(size: size)
+        return base + (max - base) * appState.deps.text.fontSize
+    }
+    
+    var font: Font {
+        return .system(size: fontSize)
     }
 
     var placeholderText: String {

@@ -29,23 +29,23 @@ final class MainScreenViewModelTests: XCTestCase {
     func testFontCalculation() {
         let appState = makeAppState(fontSize: TestData.minFontSizeCoefficient, mode: .text)
         let viewModel = MainScreenViewModel(appState: appState)
-        XCTAssertEqual(viewModel.font, .system(size: TestData.minFontSize))
+        XCTAssertEqual(viewModel.fontSize,  TestData.minFontSize)
 
         appState.deps.text.fontSize = TestData.maxFontSizeCoefficient
         // принудительно уведомим об изменении
         viewModel.objectWillChange.send()
-        XCTAssertEqual(viewModel.font, .system(size: TestData.maxFontSize))
+        XCTAssertEqual(viewModel.fontSize, TestData.maxFontSize)
     }
 
     func testFontUpdatesOnFontSizeChange() async throws {
         let appState = makeAppState(fontSize: 0.25, mode: .text)
         let viewModel = MainScreenViewModel(appState: appState)
 
-        XCTAssertEqual(viewModel.font, .system(size: customFontSize(basedOn: 0.25)))
+        XCTAssertEqual(viewModel.fontSize, customFontSize(basedOn: 0.25))
 
         appState.deps.text.fontSize = 0.75
         viewModel.objectWillChange.send()
-        XCTAssertEqual(viewModel.font, .system(size: customFontSize(basedOn: 0.75)))
+        XCTAssertEqual(viewModel.fontSize, customFontSize(basedOn: 0.75))
     }
 }
 
@@ -68,7 +68,10 @@ private extension MainScreenViewModelTests {
                     )
                 ),
                 text: textViewModel,
-                eyedropper: EyedropperViewModel()
+                eyedropper: EyedropperViewModel(
+                    torchController: TorchControllerMock(),
+                    hapticImpactGenerator: HapticImpactGeneratorMock()
+                )
             )
         )
     }

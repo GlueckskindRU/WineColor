@@ -40,7 +40,7 @@ struct EyedropperView: View {
                     {
                         Rectangle()
                             .stroke(Color.white, lineWidth: 3)
-                            .frame(width: 75, height: 75)
+                            .frame(width: 34, height: 34)
                     }
                 }
             )

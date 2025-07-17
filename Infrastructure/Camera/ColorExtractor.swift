@@ -25,14 +25,14 @@ struct ColorExtractor {
         let height = cgImage.height
 
         // Размер области в центре для анализа
-        let regionSize = 75
+        let regionSize = 34
         let halfRegion = regionSize / 2
 
         // Центр изображения
         let centerX = width / 2
         let centerY = height / 2
 
-        // Координаты вырезки 75x75
+        // Координаты вырезки 34x34
         let cropRect = CGRect(
             x: centerX - halfRegion,
             y: centerY - halfRegion,

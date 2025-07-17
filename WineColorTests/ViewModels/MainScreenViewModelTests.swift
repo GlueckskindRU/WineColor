@@ -29,7 +29,7 @@ final class MainScreenViewModelTests: XCTestCase {
     func testFontCalculation() {
         let appState = makeAppState(fontSize: TestData.minFontSizeCoefficient, mode: .text)
         let viewModel = MainScreenViewModel(appState: appState)
-        XCTAssertEqual(viewModel.fontSize,  TestData.minFontSize)
+        XCTAssertEqual(viewModel.fontSize, TestData.minFontSize)
 
         appState.deps.text.fontSize = TestData.maxFontSizeCoefficient
         // принудительно уведомим об изменении

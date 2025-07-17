@@ -13,18 +13,23 @@ public struct HapticImpactGenerator: HapticImpactGeneratorProtocol {
         switch impact {
             case .light:
                 let generator = UIImpactFeedbackGenerator(style: .light)
+                generator.prepare()
                 generator.impactOccurred()
             case .medium:
                 let generator = UIImpactFeedbackGenerator(style: .medium)
+                generator.prepare()
                 generator.impactOccurred()
             case .success:
                 let generator = UINotificationFeedbackGenerator()
+                generator.prepare()
                 generator.notificationOccurred(.success)
             case .warning:
                 let generator = UINotificationFeedbackGenerator()
+                generator.prepare()
                 generator.notificationOccurred(.warning)
             case .error:
                 let generator = UINotificationFeedbackGenerator()
+                generator.prepare()
                 generator.notificationOccurred(.error)
         }
     }

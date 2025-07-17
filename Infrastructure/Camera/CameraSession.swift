@@ -22,6 +22,7 @@ final class CameraSession: NSObject {
     private override init() {
         #if targetEnvironment(simulator)
         print("⚠️ Камера не доступна в симуляторе")
+        super.init()
         return
         #endif
         

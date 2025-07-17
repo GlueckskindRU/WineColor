@@ -26,16 +26,36 @@ extension ActiveMode {
 
     var icon: String {
         switch self {
-            case .brightness: "lightbulb.max"
-            case .text: "text.page"
+            case .brightness: 
+                if #available(iOS 17.0, *) {
+                    "lightbulb.max"
+                } else {
+                    "sun.max"
+                }
+            case .text:
+                if #available(iOS 18.0, *) {
+                    "text.page"
+                } else {
+                    "doc.plaintext" // "a.square"
+                }
             case .eyedropper: "camera"
         }
     }
     
     var iconSelected: String {
         switch self {
-            case .brightness: "lightbulb.max.fill"
-            case .text: "text.page.fill"
+            case .brightness:
+                if #available(iOS 17.0, *) {
+                    "lightbulb.max.fill"
+                } else {
+                    "sun.max.fill"
+                }
+            case .text:
+                if #available(iOS 18.0, *) {
+                    "text.page.fill"
+                } else {
+                    "doc.plaintext.fill" // "a.square.fill"
+                }
             case .eyedropper: "camera.fill"
         }
     }

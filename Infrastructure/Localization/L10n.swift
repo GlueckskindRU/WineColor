@@ -78,4 +78,8 @@ enum L10n {
             static let buttonTitle = String(localized: "eyedropperView.alert.buttonTitle")
         }
     }
+    
+    enum AboutApp {
+        static let text = String(localized: "aboutApp.text")
+    }
 }

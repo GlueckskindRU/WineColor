@@ -15,37 +15,50 @@ struct MainScreenView: View {
     let hapticImpactGenerator: HapticImpactGeneratorProtocol
     
     var body: some View {
-        ZStack {
-            // Фон
-            viewModel.backgroundColor
-                .ignoresSafeArea()
+        VStack(spacing: 0) {
+            ZStack {
+                // Фон
+                viewModel.backgroundColor
+                    .ignoresSafeArea()
+                
+                // Камера
+                if viewModel.isEyedropperMode {
+                    EyedropperView(viewModel: eyedropperViewModel)
+                }
 
-            // Камера
-            if viewModel.isEyedropperMode {
-                EyedropperView(viewModel: eyedropperViewModel)
+                // Текст
+                if
+                    viewModel.isTextMode,
+                    let attributedText = try? AttributedString(
+                        markdown: viewModel.aboutAppText,
+                        options: AttributedString.MarkdownParsingOptions(
+                            interpretedSyntax: .inlineOnlyPreservingWhitespace
+                            )
+                    )
+                {
+                    ScrollView {
+                        VStack(alignment: .leading) {
+                            Text(attributedText)
+                                .font(viewModel.font)
+                                .foregroundColor(.black.opacity(0.8))
+                                .multilineTextAlignment(.leading)
+                                .padding()
+                                .padding(.bottom, 30)
+                        }
+                        .frame(maxWidth: .infinity, alignment: .topLeading)
+                    }
+                    .padding(.top, 1)
+                }
             }
-
-            // Текст
-            if viewModel.isTextMode {
-                Text(viewModel.placeholderText)
-                    .font(viewModel.font)
-                    .foregroundColor(.black.opacity(0.8))
-                    .padding()
-                    .multilineTextAlignment(.leading)
-                    .padding(.bottom, 30)
-            }
-             // Нижняя панель управления
-            VStack(spacing: 12) {
-                 Spacer()
-                 ControlPanelView(
-                    activeMode: $viewModel.mode,
-                    brightnessViewModel: brightnessViewModel,
-                    textViewModel: textViewModel,
-                    eyedropperViewModel: eyedropperViewModel,
-                    hapticImpactGenerator: hapticImpactGenerator
-                 )
-                 .background(.white)
-            }
+            // Панель управления внизу
+            ControlPanelView(
+                activeMode: $viewModel.mode,
+                brightnessViewModel: brightnessViewModel,
+                textViewModel: textViewModel,
+                eyedropperViewModel: eyedropperViewModel,
+                hapticImpactGenerator: hapticImpactGenerator
+            )
+            .background(.white)
             .padding(.horizontal)
             .padding(.bottom, 24)
         }

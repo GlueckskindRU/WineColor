@@ -1,6 +1,53 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "aboutApp.text" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Mobile App für Weinliebhaber: Farbe und Klarheit mit einem Fingertipp bewerten.**\n\nIn der Welt des Weins zählt jeder Farbton. Unsere neue iPhone-App verwandelt Ihr Smartphone in einen Taschen-Sommelier und hilft Ihnen, die Farbe und Klarheit des Weins im Glas präzise zu bestimmen. So funktioniert es:\n**1. Weißer Bildschirm mit Helligkeitsregler**\nPlatzieren Sie das iPhone unter das Weinglas, aktivieren Sie den weißen Bildschirm und passen Sie die Helligkeit an. So entsteht ein „Lichttisch“, mit dem Sie die Farbe des Weins im Detail betrachten können – von klarem Rubin bis zu tiefem Bernstein.\n**2. Transparenztest**\nWählen Sie den Modus mit Textanzeige. Über die Schriftgröße können Sie die Transparenz des Weins einschätzen: Je besser der Text durch das Getränk lesbar ist, desto klarer ist der Wein. Unterhaltsam und einfach!\n**3. Farbpipette**\nRichten Sie die iPhone-Kamera auf den Wein, wählen Sie den Bereich mit dem genauesten Farbton und tippen Sie auf „Farbe erkennen“. Die App zeigt Ihnen die Farbe an – ideal für Ihre Verkostungsnotizen."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**A mobile app for wine lovers: assess color and clarity with a single tap.**\n\nIn the world of wine, every shade matters. Our new iPhone app turns your smartphone into a pocket sommelier, helping you accurately evaluate the color and clarity of wine in a glass. Here’s how it works:\n**1. White screen with adjustable brightness**\nPlace your iPhone under the glass, turn on the white screen, and adjust the brightness. This “light table” lets you observe the wine’s color in detail—from transparent ruby to deep amber.\n**2. Clarity test**\nSelect the mode with text on the screen. By adjusting the font size, you can gauge how transparent the wine is: the more legible the text through the liquid, the higher the clarity. Fun and simple!\n**3. Color dropper**\nPoint your iPhone’s camera at the wine, select the most accurate color area, and tap “Detect color.” The app will tell you what color it is — a perfect assistant for your tasting notes."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Aplicación móvil para amantes del vino: evalúa el color y la claridad con un solo toque.**\n\nEn el mundo del vino, cada matiz cuenta. Nuestra nueva app para iPhone convierte tu smartphone en un sommelier de bolsillo, ayudándote a evaluar con precisión el color y la transparencia del vino en tu copa. Así funciona:\n**1. Pantalla blanca con brillo ajustable**\nColoca el iPhone debajo de la copa, activa la pantalla blanca y ajusta el brillo. Esta “mesa de luz” te permite observar en detalle el color del vino — desde un rubí transparente hasta un ámbar intenso.\n**2. Prueba de transparencia**\nSelecciona el modo con texto en pantalla. Ajustando el tamaño de la fuente, podrás valorar la transparencia del vino: cuanto más claro se vea el texto a través del líquido, mayor será su transparencia. ¡Divertido y fácil!\n**3. Cuentagotas de color**\nApunta la cámara del iPhone hacia el vino, selecciona la zona con el tono más preciso y pulsa “Detectar color”. La app te dirá qué color es — el asistente perfecto para tus notas de cata."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Application mobile pour les amateurs de vin : analysez couleur et limpidité en un geste.**\n\nDans le monde du vin, chaque nuance compte. Notre nouvelle application iPhone transforme votre smartphone en sommelier de poche, vous aidant à déterminer avec précision la couleur et la transparence du vin dans votre verre. Voici comment cela fonctionne :\n**1. Écran blanc avec luminosité réglable**\nPlacez l’iPhone sous le verre, activez l’écran blanc et ajustez la luminosité. Cette sorte de “table lumineuse” vous permet d’observer les couleurs du vin — du rubis clair à l’ambre intense.\n**2. Test de transparence**\nChoisissez le mode avec texte à l’écran. En ajustant la taille de la police, vous pouvez évaluer la transparence du vin : plus le texte est lisible à travers le liquide, plus le vin est limpide. Ludique et efficace !\n**3. Pipette de couleur**\nPointez la caméra de l’iPhone vers le vin, sélectionnez la zone la plus représentative et appuyez sur « Détecter la couleur ». L’application vous indiquera la teinte — un assistant idéal pour vos notes de dégustation."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**App mobile per gli amanti del vino: valuta colore e trasparenza con un solo tocco.**\n\nNel mondo del vino, ogni sfumatura conta. La nostra nuova app per iPhone trasforma il tuo smartphone in un sommelier tascabile, aiutandoti a valutare con precisione il colore e la limpidezza del vino nel bicchiere. Ecco come funziona:\n**1. Schermo bianco con luminosità regolabile**\nPosiziona l’iPhone sotto il bicchiere, attiva lo schermo bianco e regola la luminosità. Questo “tavolo luminoso” ti consente di osservare nei dettagli il colore del vino — dal rubino trasparente all’ambra intensa.\n**2. Test di trasparenza**\nSeleziona la modalità con testo sullo schermo. Regolando la dimensione del carattere, potrai valutare la trasparenza del vino: più facilmente si legge il testo attraverso il liquido, maggiore sarà la sua limpidezza. Divertente e intuitivo!\n**3. Contagocce colore**\nPunta la fotocamera dell’iPhone sul vino, scegli l’area con la tonalità più precisa e premi “Rileva colore”. L’app ti dirà di che colore si tratta — un perfetto alleato per le tue note di degustazione."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Aplicativo móvel para amantes de vinho: avalie a cor e a transparência com um toque.**\n\nNo mundo do vinho, cada tonalidade importa. Nosso novo app para iPhone transforma seu smartphone em um sommelier de bolso, ajudando a identificar com precisão a cor e a transparência do vinho na taça. Veja como funciona:\n**1. Tela branca com brilho ajustável**\nColoque o iPhone sob a taça, ative a tela branca e ajuste o brilho. Essa espécie de “mesa de luz” permite observar em detalhes a cor do vinho — do rubi claro ao âmbar profundo.\n**2. Teste de transparência**\nEscolha o modo com texto na tela. Ajustando o tamanho da fonte, você poderá avaliar o quão transparente é o vinho: quanto mais legível o texto através da bebida, maior a sua transparência. Simples e divertido!\n**3. Conta-gotas de cor**\nAponte a câmera do iPhone para o vinho, selecione a área com a tonalidade mais precisa e toque em “Detectar cor”. O app dirá qual é a cor — o parceiro ideal para suas anotações de degustação."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Мобильное приложение для ценителей вина: оценка цвета и прозрачности в одном касании.**\n\nВ мире вина каждый оттенок имеет значение. Наше новое iPhone-приложение превращает ваш смартфон в карманного сомелье, помогая точно определить цвет и прозрачность вина в бокале. Вот как это работает:\n**1. Белый экран с управляемой яркостью**\nРазместите iPhone под бокалом, включите белый экран и отрегулируйте яркость. Такой «световой планшет» позволяет детально рассмотреть цвет вина — от прозрачного рубина до насыщенного янтаря.\n**2. Тест на прозрачность**\nВыберите режим с текстом на экране. Управляя размером шрифта, вы сможете оценить, насколько вино прозрачно: чем лучше читается текст сквозь напиток — тем выше его прозрачность. Увлекательно и просто!\n**3. Цветовая пипетка**\nНаведите камеру iPhone на вино, выберите участок с наиболее точным оттенком и нажмите \"Определить цвет\". Приложение подскажет, какой это цвет — идеальный помощник для дегустационных заметок."
+          }
+        }
+      }
+    },
     "amberWine.title" : {
       "extractionState" : "manual",
       "localizations" : {

@@ -29,12 +29,7 @@ struct MainScreenView: View {
                 // Текст
                 if
                     viewModel.isTextMode,
-                    let attributedText = try? AttributedString(
-                        markdown: viewModel.aboutAppText,
-                        options: AttributedString.MarkdownParsingOptions(
-                            interpretedSyntax: .inlineOnlyPreservingWhitespace
-                            )
-                    )
+                    let attributedText = viewModel.aboutAppText
                 {
                     ScrollView {
                         VStack(alignment: .leading) {

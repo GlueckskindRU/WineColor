@@ -56,7 +56,14 @@ final class MainScreenViewModel: ObservableObject {
         return .system(size: fontSize)
     }
 
-    let aboutAppText = L10n.AboutApp.text
+    var aboutAppText: AttributedString? {
+        try? AttributedString(
+            markdown: L10n.AboutApp.text,
+            options: AttributedString.MarkdownParsingOptions(
+                interpretedSyntax: .inlineOnlyPreservingWhitespace
+                )
+        )
+    }
 
     // MARK: - Slider Binding
 

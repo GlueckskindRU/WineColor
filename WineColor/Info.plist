@@ -2,11 +2,9 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSCameraUsageDescription</key>
-	<string>To identify the color of wine in a glass</string>
-	<key>ITSAppUsesNonExemptEncryption</key>
-	<false/>
-	<key>UIUserInterfaceStyle</key>
-	<string>Light</string>
+	<key>UIDeviceFamily</key>
+	<array>
+		<integer>1</integer>
+	</array>
 </dict>
 </plist>

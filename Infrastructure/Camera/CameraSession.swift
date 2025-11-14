@@ -10,43 +10,121 @@ import SwiftUI
 
 // MARK: - Camera Session Singleton
 
-@MainActor
-final class CameraSession: NSObject {
-    @MainActor
+final class CameraSession: NSObject, @unchecked Sendable {
     static let shared = CameraSession()
+
     let session = AVCaptureSession()
-    
+
+    private let sessionQueue = DispatchQueue(label: "camera.session.queue")
+    private let videoQueue   = DispatchQueue(label: "camera.video.queue")
+    private var isConfigured = false
+    private var areObserversInstalled = false
+
     private var shouldCaptureColor = false
     private var colorCaptureCompletion: ((Color?) -> Void)?
+    
+    private let preferredDeviceTypes: [AVCaptureDevice.DeviceType] = [
+        .builtInWideAngleCamera,
+        .builtInDualCamera,
+        .builtInDualWideCamera,
+        .builtInTripleCamera
+    ]
 
     private override init() {
+        super.init()
         #if targetEnvironment(simulator)
-        print("⚠️ Камера не доступна в симуляторе")
-        super.init()
-        return
+        Analytics.log(AnalyticsEvent(name: "⚠️ Камера не доступна в симуляторе"))
         #endif
-        
-        super.init()
-        
-        session.beginConfiguration()
-        
-        // Camera input
-        if
-            let device = AVCaptureDevice.default(for: .video),
-            let input = try? AVCaptureDeviceInput(device: device),
-            session.canAddInput(input)
-        {
-            session.addInput(input)
+    }
+    
+    func configureIfNeeded() async {
+        await withCheckedContinuation { continuation in
+            sessionQueue.async { [weak self] in
+                guard let self else {
+                    continuation.resume()
+                    return
+                }
+
+                // единственная точка чтения флага, на sessionQueue
+                if self.isConfigured {
+                    continuation.resume()
+                    return
+                }
+
+                self.installObservers()
+                
+                let localSession = self.session
+                localSession.beginConfiguration()
+                defer { localSession.commitConfiguration() }
+
+                localSession.sessionPreset = .photo
+
+                guard
+                    let camera = self.backCamera(),
+                    let input = try? AVCaptureDeviceInput(device: camera),
+                    localSession.canAddInput(input)
+                else {
+                    Analytics.log(AnalyticsEvent(name: "⚠️ Камера не найдена или не может быть добавлена."))
+                    continuation.resume()
+                    return
+                }
+
+                localSession.addInput(input)
+
+                self.setupVideoOutput(on: localSession)
+                self.isConfigured = true
+                continuation.resume()
+            }
+        }
+    }
+
+
+    /// Запускает сессию только при наличии разрешения.
+    func startIfAuthorized(_ permission: CameraPermissionState) async {
+        guard permission == .authorized else { return }
+        await start()
+    }
+
+    func start() async {
+        if !isConfigured {
+            await configureIfNeeded()
         }
 
-        session.commitConfiguration()
-        self.setupVideoOutput()
-        // ✅ Сохраняем ссылку локально на главном потоке:
-        let localSession = session
-        // ✅ Используем уже НЕ @MainActor-путь
-        DispatchQueue.global(qos: .userInitiated).async {
-            localSession.startRunning()
+        await withCheckedContinuation { cont in
+            sessionQueue.async {
+                guard !self.session.isRunning else {
+                    cont.resume()
+                    return
+                }
+                self.session.startRunning()
+                cont.resume()
+            }
         }
+    }
+    
+    func stop() async {
+        await withCheckedContinuation { cont in
+            sessionQueue.async {
+                guard self.session.isRunning else {
+                    cont.resume()
+                    return
+                }
+                self.session.stopRunning()
+                cont.resume()
+            }
+        }
+    }
+
+    private func stopSyncIfRunning() {
+        sessionQueue.sync {
+            if self.session.isRunning {
+                self.session.stopRunning()
+            }
+        }
+    }
+
+    deinit {
+        stopSyncIfRunning()
     }
 }
 
@@ -54,8 +132,8 @@ final class CameraSession: NSObject {
 
 extension CameraSession: AVCaptureVideoDataOutputSampleBufferDelegate {
     func captureColor(completion: @escaping (Color?) -> Void) {
-        self.colorCaptureCompletion = completion
-        self.shouldCaptureColor = true
+        colorCaptureCompletion = completion
+        shouldCaptureColor = true
     }
 
     nonisolated public func captureOutput(
@@ -72,9 +150,7 @@ extension CameraSession: AVCaptureVideoDataOutputSampleBufferDelegate {
         }
 
         DispatchQueue.main.async { [weak self] in
-            guard let self = self else { return }
-            guard self.shouldCaptureColor else { return }
-
+            guard let self, self.shouldCaptureColor else { return }
             self.shouldCaptureColor = false
             let color = ColorExtractor.extractCenterPixelColor(from: image)
             self.colorCaptureCompletion?(color)
@@ -83,19 +159,73 @@ extension CameraSession: AVCaptureVideoDataOutputSampleBufferDelegate {
     }
 }
 
-// MARK: - Private methods
+// MARK: - Private
 
 private extension CameraSession {
-    var videoQueue: DispatchQueue {
-        return DispatchQueue(label: "camera.video.queue")
+    func backCamera() -> AVCaptureDevice? {
+        let fromList = preferredDeviceTypes
+            .compactMap { AVCaptureDevice.default($0, for: .video, position: .back) }
+            .first
+
+        return fromList ?? AVCaptureDevice.default(for: .video)
     }
+    
+    func setupVideoOutput(on session: AVCaptureSession) {
+        let output = AVCaptureVideoDataOutput()
+        output.alwaysDiscardsLateVideoFrames = true
+        output.videoSettings = [
+            kCVPixelBufferPixelFormatTypeKey as String: kCVPixelFormatType_32BGRA
+        ]
+        output.setSampleBufferDelegate(self, queue: videoQueue)
 
-    func setupVideoOutput() {
-        let videoOutput = AVCaptureVideoDataOutput()
-        videoOutput.setSampleBufferDelegate(self, queue: videoQueue)
+        if session.canAddOutput(output) {
+            session.addOutput(output)
+        }
+        if
+            let outputConnection = output.connection(with: .video),
+            outputConnection.isVideoOrientationSupported
+        {
+            outputConnection.videoOrientation = .portrait
+        }
+    }
+    
+    func installObservers() {
+        guard !areObserversInstalled else { return }
+        areObserversInstalled = true
+        
+        let notificationCenter = NotificationCenter.default
 
-        if session.canAddOutput(videoOutput) {
-            session.addOutput(videoOutput)
+        notificationCenter.addObserver(
+            forName: .AVCaptureSessionWasInterrupted,
+            object: session,
+            queue: nil
+        ) { [weak self] note in
+            guard let self else { return }
+            let reason = note.userInfo?[AVCaptureSessionInterruptionReasonKey] as? Int
+            Analytics.log(AnalyticsEvent(name: "⚠️ Сессия камеры прервана. reason: \(reason ?? -1)"))
+            // Здесь можно уведомить ViewModel, если нужно отобразить оверлей
+        }
+
+        notificationCenter.addObserver(
+            forName: .AVCaptureSessionInterruptionEnded,
+            object: session,
+            queue: nil
+        ) { [weak self] _ in
+            Analytics.log(AnalyticsEvent(name: "✅ Сессия камеры возобновилась"))
+            Task { await self?.start() }
+        }
+
+        notificationCenter.addObserver(
+            forName: .AVCaptureSessionRuntimeError,
+            object: session,
+            queue: nil
+        ) { [weak self] note in
+            Analytics.log(AnalyticsEvent(name: "💥 Ошибка камеры: <\(note.debugDescription)>"))
+            Task {
+                await self?.stop()
+                try? await Task.sleep(nanoseconds: 1_000_000_000)
+                await self?.start()
+            }
         }
     }
 }

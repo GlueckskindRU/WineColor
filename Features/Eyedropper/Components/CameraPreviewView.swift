@@ -8,8 +8,10 @@
 import SwiftUI
 import AVFoundation
 
+// MARK: - CameraPreviewView
+
 struct CameraPreviewView: UIViewRepresentable {
-    private let session: AVCaptureSession
+    let session: AVCaptureSession
 
     init(session: AVCaptureSession = CameraSession.shared.session) {
         self.session = session
@@ -21,6 +23,11 @@ struct CameraPreviewView: UIViewRepresentable {
         view.videoPreviewLayer.videoGravity = .resizeAspectFill
         return view
     }
-
-    func updateUIView(_ uiView: PreviewView, context: Context) {}
+    
+    func updateUIView(_ uiView: PreviewView, context: Context) {
+        // на случай, если сессию заменят
+        if uiView.videoPreviewLayer.session !== session {
+            uiView.videoPreviewLayer.session = session
+        }
+    }
 }

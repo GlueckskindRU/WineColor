@@ -47,6 +47,9 @@
 		D2F624B92E27B25600308A16 /* HapticImpact.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F624B82E27B25600308A16 /* HapticImpact.swift */; };
 		D2F624BB2E27B2BE00308A16 /* HapticImpactGeneratorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F624BA2E27B2BE00308A16 /* HapticImpactGeneratorProtocol.swift */; };
 		D2F624BD2E27B31600308A16 /* HapticImpactGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F624BC2E27B31600308A16 /* HapticImpactGenerator.swift */; };
+		D2F8625F2EC245E100E25465 /* CameraPermissionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F8625E2EC245E100E25465 /* CameraPermissionState.swift */; };
+		D2F862612EC2464000E25465 /* CameraAuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F862602EC2464000E25465 /* CameraAuthorizationService.swift */; };
+		D2F862632EC24A6600E25465 /* CameraUnavailableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F862622EC24A6600E25465 /* CameraUnavailableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,10 +105,13 @@
 		D2F624B82E27B25600308A16 /* HapticImpact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticImpact.swift; sourceTree = "<group>"; };
 		D2F624BA2E27B2BE00308A16 /* HapticImpactGeneratorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticImpactGeneratorProtocol.swift; sourceTree = "<group>"; };
 		D2F624BC2E27B31600308A16 /* HapticImpactGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticImpactGenerator.swift; sourceTree = "<group>"; };
+		D2F8625E2EC245E100E25465 /* CameraPermissionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPermissionState.swift; sourceTree = "<group>"; };
+		D2F862602EC2464000E25465 /* CameraAuthorizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraAuthorizationService.swift; sourceTree = "<group>"; };
+		D2F862622EC24A6600E25465 /* CameraUnavailableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraUnavailableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		D2F624B12E24191300308A16 /* Exceptions for "WineColor" folder in "WineColor" target */ = {
+		D2F862882EC39D8900E25465 /* Exceptions for "WineColor" folder in "WineColor" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -123,7 +129,7 @@
 		D2B3998B2DEB595F00389746 /* WineColor */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				D2F624B12E24191300308A16 /* Exceptions for "WineColor" folder in "WineColor" target */,
+				D2F862882EC39D8900E25465 /* Exceptions for "WineColor" folder in "WineColor" target */,
 			);
 			path = WineColor;
 			sourceTree = "<group>";
@@ -315,6 +321,7 @@
 			children = (
 				D296FC712E2404EE0068527C /* PreviewView.swift */,
 				D296FC732E2405170068527C /* CameraPreviewView.swift */,
+				D2F862622EC24A6600E25465 /* CameraUnavailableView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -324,6 +331,8 @@
 			children = (
 				D296FC6F2E2403870068527C /* CameraSession.swift */,
 				D2F624B52E2672FD00308A16 /* ColorExtractor.swift */,
+				D2F8625E2EC245E100E25465 /* CameraPermissionState.swift */,
+				D2F862602EC2464000E25465 /* CameraAuthorizationService.swift */,
 			);
 			path = Camera;
 			sourceTree = "<group>";
@@ -562,6 +571,8 @@
 				D296FC592E21324A0068527C /* AppDependencies.swift in Sources */,
 				D2F34B5D2E1D72FF005AF3B6 /* EyedropperViewModel.swift in Sources */,
 				D273C8AF2E02AC5A00142DBF /* ActiveMode.swift in Sources */,
+				D2F8625F2EC245E100E25465 /* CameraPermissionState.swift in Sources */,
+				D2F862632EC24A6600E25465 /* CameraUnavailableView.swift in Sources */,
 				D296FC692E23FF5A0068527C /* EyedropperView.swift in Sources */,
 				D25715D62E1FF24B0044AA0D /* AppLifecycleObserverProtocol.swift in Sources */,
 				D296FC652E23FF060068527C /* TorchControllingProtocol.swift in Sources */,
@@ -582,6 +593,7 @@
 				D2F34B5F2E1D7350005AF3B6 /* AppState.swift in Sources */,
 				D296FC5F2E21662C0068527C /* ControlPanelWithSlidingEnabledView.swift in Sources */,
 				D273C8992DEB59E300142DBF /* WineColorApp.swift in Sources */,
+				D2F862612EC2464000E25465 /* CameraAuthorizationService.swift in Sources */,
 				D25715E92E201B9A0044AA0D /* NotificationPublishing.swift in Sources */,
 				D273C8AB2DEC945100142DBF /* String.swift in Sources */,
 				D2F624B92E27B25600308A16 /* HapticImpact.swift in Sources */,
@@ -775,7 +787,7 @@
 				DEVELOPMENT_TEAM = 3BEPD83256;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				"INFOPLIST_FILE[sdk=*]" = WineColor/Info.plist;
+				INFOPLIST_FILE = WineColor/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = WineCheck;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_NSCameraUsageDescription = "To identify the color of wine in a glass";
@@ -813,7 +825,7 @@
 				DEVELOPMENT_TEAM = 3BEPD83256;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				"INFOPLIST_FILE[sdk=*]" = WineColor/Info.plist;
+				INFOPLIST_FILE = WineColor/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = WineCheck;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_NSCameraUsageDescription = "To identify the color of wine in a glass";

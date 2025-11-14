@@ -66,6 +66,11 @@ enum L10n {
             /// Reset
             static let title = String(localized: "button.ResetColor.title")
         }
+        
+        enum OpenSettings {
+            /// Open Settings
+            static let title = String(localized: "button.openSettings.title")
+        }
     }
     
     enum EyedropperView {
@@ -81,5 +86,28 @@ enum L10n {
     
     enum AboutApp {
         static let text = String(localized: "aboutApp.text")
+    }
+    
+    enum CameraPermission {
+        enum Denied {
+            /// Allow access in Settings to use color detection.
+            static let message = String(localized: "cameraPermission.Denied.message")
+            /// Camera unavailable
+            static let title = String(localized: "cameraPermission.Denied.title")
+        }
+        
+        enum Restricted {
+            /// Camera usage is restricted by system settings.
+            static let message = String(localized: "cameraPermission.Restricted.message")
+            /// Camera restricted
+            static let title = String(localized: "cameraPermission.Restricted.title")
+        }
+        
+        enum NotDetermined {
+            /// Requesting camera access…
+            static let message = String(localized: "cameraPermission.NotDetermined.message")
+            /// Waiting for permission
+            static let title = String(localized: "cameraPermission.NotDetermined.title")
+        }
     }
 }
